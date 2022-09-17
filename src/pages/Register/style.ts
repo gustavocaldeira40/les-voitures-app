@@ -1,6 +1,7 @@
+import styled from 'styled-components/native'
 import { Metrics } from './../../styles/metricts'
 import { LinearGradient } from 'expo-linear-gradient'
-import styled from 'styled-components/native'
+import { KeyboardAvoidingView } from 'react-native'
 import { Colors } from '../../styles/colors'
 
 export const Container = styled.View`
@@ -9,7 +10,9 @@ export const Container = styled.View`
   justify-content: space-around;
 `
 
-export const ContaninerSelect = styled.View``
+export const ContainerTop = styled.View`
+  flex: 1;
+`
 
 export const MainOverlay = styled(LinearGradient)`
   position: absolute;
@@ -22,5 +25,5 @@ export const MainOverlay = styled(LinearGradient)`
 
 export const ContainerButton = styled.View`
   align-items: flex-end;
-  padding: ${Metrics.padding};
+  padding: ${Metrics.paddingBottom};
 `

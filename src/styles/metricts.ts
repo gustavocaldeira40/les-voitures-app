@@ -9,9 +9,10 @@ export const statusBarHeight =
   Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT
 
 export const Metrics = {
-  padding: '20px',
-  paddingTop: `90px 20px 0 20px`,
+  padding: '10px',
+  paddingTop: `90px 10px 0 10px`,
   paddingTextDescription: '0 50px 0 0',
   paddingVertical: '20px 0',
-  marginSelectItem: '10px 20px',
+  marginSelectItem: '10px ',
+  paddingBottom: '0 10px 30px 10px',
 }

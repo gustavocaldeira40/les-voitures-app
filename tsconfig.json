@@ -11,10 +11,21 @@
     "skipLibCheck": false,
     "resolveJsonModule": true,
     "strict": true,
-    "baseUrl": ".",
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": "./src",
     "paths": {
-      "assets/*": ["assets/*"],
-      "pages/*": ["pages/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@interfaces": ["./src/interfaces/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@visual/*": ["./src/assets/visual*"],
+      "@pages/*": ["./src/pages/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@services/*": ["./src/services/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["./src/**/*"],

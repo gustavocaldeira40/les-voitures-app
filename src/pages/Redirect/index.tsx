@@ -47,12 +47,14 @@ const RedirectScreen: React.FC = () => {
    */
   const loadData = async () => {
     const language = await AppStorage.getData('@lesVoitures:language')
-    const user = await AppStorage.getData('@lesVoitures:user')
+    const user = await AppStorage.getData('@lesVoitures:userName')
 
     if (!language) {
       navigation.navigate('SelectLanguage')
     } else if (!user) {
       navigation.navigate('Register')
+    } else {
+      navigation.navigate('Home')
     }
   }
 
@@ -65,9 +67,9 @@ const RedirectScreen: React.FC = () => {
    *   EFFECTS
    */
 
-  useEffect(() => {
-    removeKeys()
-  }, [])
+  // useEffect(() => {
+  //   removeKeys()
+  // }, [])
 
   useEffect(() => {
     Animated.parallel([

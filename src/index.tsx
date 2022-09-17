@@ -1,9 +1,7 @@
 import React from 'react'
 import { useFonts } from 'expo-font'
-import { Text, View } from 'react-native'
 import Routes from './routes'
 import { NavigationContainer } from '@react-navigation/native'
-import { StatusBar } from 'expo-status-bar'
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({

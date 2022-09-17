@@ -12,11 +12,11 @@ import { Platform, NativeModules } from 'react-native'
 import BrasilFlag from '../../assets/images/selectLanguages/brasil.png'
 import EnglishFlag from '../../assets/images/selectLanguages/english.png'
 import FrenchFlag from '../../assets/images/selectLanguages/french.png'
-import { FlagsProps } from 'src/types/flags'
 import Button from '../../components/Button'
 import AppStorage from '../../services/appStorage'
 import { useNavigation } from '@react-navigation/native'
 import { showMessage } from 'react-native-flash-message'
+import { FlagsProps } from 'types/flags'
 
 const SelectLanguage: React.FC = () => {
   /*
@@ -56,7 +56,6 @@ const SelectLanguage: React.FC = () => {
    */
 
   const nextStep = async () => {
-
     if (!selectedFlag) {
       showMessage({
         message: 'Selecione um idioma',

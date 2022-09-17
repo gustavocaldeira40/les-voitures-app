@@ -4,6 +4,7 @@ export const Colors = {
 
   subTitle: '#DCDCDC',
   description: '#A8A8A8',
+  lightGray: '#DADADA',
 
   success: '#65E04D',
   error: '#D23434',

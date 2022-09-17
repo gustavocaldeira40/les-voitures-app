@@ -5,6 +5,7 @@ import RedirectScreen from '../pages/Redirect'
 import Register from '../pages/Register'
 import FlashMessage from 'react-native-flash-message'
 import { statusBarHeight } from '../styles/metricts'
+import Home from '../pages/Home'
 
 const { Navigator, Screen } = createStackNavigator()
 
@@ -27,6 +28,7 @@ const Routes: React.FC = () => {
           component={Register}
           options={{ headerShown: false }}
         />
+        <Screen name="Home" component={Home} options={{ headerShown: false }} />
       </Navigator>
 
       <FlashMessage

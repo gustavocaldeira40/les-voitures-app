@@ -1,15 +1,9 @@
-import { Metrics } from './../../styles/metricts'
 import { LinearGradient } from 'expo-linear-gradient'
 import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
 
 export const Container = styled.View`
   flex: 1;
-  position: relative;
-  justify-content: space-around;
 `
-
-export const ContaninerSelect = styled.View``
 
 export const MainOverlay = styled(LinearGradient)`
   position: absolute;
@@ -20,7 +14,9 @@ export const MainOverlay = styled(LinearGradient)`
   right: 0;
 `
 
-export const ContainerButton = styled.View`
-  align-items: flex-end;
-  padding: ${Metrics.padding};
+export const ContainerAction = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
 `
