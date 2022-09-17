@@ -1,10 +1,12 @@
-import { Metrics, statusBarHeight } from './../../styles/metricts'
+import { statusBarHeight } from '../../styles/metricts'
 import styled from 'styled-components/native'
 import { Colors } from '../../styles/colors'
 import { Animated } from 'react-native'
 
 export const Container = styled(Animated.View)`
   padding: ${statusBarHeight + 20}px 10px 20px 10px;
+  /* background: blue; */
+  margin-bottom: 50px;
 `
 
 export const TextTitle = styled.Text`

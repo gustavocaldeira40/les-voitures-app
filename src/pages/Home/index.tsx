@@ -9,6 +9,7 @@ import ActionsButton from '../../components/ActionsButton'
 import { AntDesign } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
 import Octicons from 'react-native-vector-icons/Octicons'
+import { useNavigation } from '@react-navigation/native'
 
 const Home: React.FC = () => {
   /*
@@ -27,6 +28,7 @@ const Home: React.FC = () => {
   /*
    *   HOOKS
    */
+  const navigation = useNavigation<any>()
 
   /*
    *   LAYOUT
@@ -61,8 +63,6 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <StatusBar style="light" translucent backgroundColor="transparent" />
-
       <Container>
         <MainOverlay
           colors={[Colors.secondary, Colors.primary]}
@@ -82,10 +82,12 @@ const Home: React.FC = () => {
           <ActionsButton
             icon={<AntDesign name="plus" size={25} color="white" />}
             description="Adicionar Carro"
+            onPress={() => navigation.navigate('AddCars')}
           />
           <ActionsButton
             icon={<Octicons name="list-unordered" size={25} color="white" />}
             description="Lista de Carros"
+            onPress={() => navigation.navigate('ListCars')}
           />
         </ContainerAction>
       </Container>

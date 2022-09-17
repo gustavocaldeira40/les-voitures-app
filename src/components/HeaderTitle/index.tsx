@@ -6,10 +6,11 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({
   title,
   description,
   subTitle,
+  style,
   hasHeader,
 }) => {
   return (
-    <Container hasHeader={hasHeader}>
+    <Container style={style} hasHeader={hasHeader}>
       <TextSubTitle>{subTitle}</TextSubTitle>
       <TextTitle>{title}</TextTitle>
       <TextDescription>{description}</TextDescription>

@@ -1,14 +1,20 @@
 import React from 'react'
 import { TextDescription, Touchable } from './style'
+import { TouchableOpacityProps } from 'react-native'
 
-interface ActionsButtonProps {
+interface ActionsButtonProps extends TouchableOpacityProps {
   description: string
   icon: JSX.Element
 }
 
-const ActionsButton: React.FC<ActionsButtonProps> = ({ icon, description }) => {
+const ActionsButton: React.FC<ActionsButtonProps> = ({
+  icon,
+  description,
+  onPress,
+}) => {
   return (
     <Touchable
+      onPress={onPress}
       activeOpacity={0.8}
       style={{
         shadowColor: '#dadada',

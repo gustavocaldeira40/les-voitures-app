@@ -3,7 +3,8 @@ import { Metrics } from './../../styles/metricts'
 import { Colors } from '../../styles/colors'
 
 export const Container = styled.View<any>`
-  padding: ${(props) => (props.hasHeader ? Metrics.padding : Metrics.paddingTop)};
+  padding: ${(props) =>
+    props.hasHeader ? Metrics.padding : Metrics.paddingTop};
 `
 
 export const TextSubTitle = styled.Text`

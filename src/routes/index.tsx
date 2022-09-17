@@ -6,6 +6,8 @@ import Register from '../pages/Register'
 import FlashMessage from 'react-native-flash-message'
 import { statusBarHeight } from '../styles/metricts'
 import Home from '../pages/Home'
+import ListCars from '../pages/ListCars'
+import AddCars from '../pages/AddCars'
 
 const { Navigator, Screen } = createStackNavigator()
 
@@ -29,6 +31,16 @@ const Routes: React.FC = () => {
           options={{ headerShown: false }}
         />
         <Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Screen
+          name="ListCars"
+          component={ListCars}
+          options={{ headerShown: false }}
+        />
+        <Screen
+          name="AddCars"
+          component={AddCars}
+          options={{ headerShown: false }}
+        />
       </Navigator>
 
       <FlashMessage

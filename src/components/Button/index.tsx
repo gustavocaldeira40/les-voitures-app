@@ -8,6 +8,8 @@ interface ButtonProps {
   width?: string | number
   height?: string | number
   onPress: () => void
+  secondary?: boolean
+  margin?: string | number
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,6 +17,8 @@ const Button: React.FC<ButtonProps> = ({
   height,
   width,
   onPress,
+  secondary,
+  margin,
 }) => {
   return (
     <Touchable
@@ -22,8 +26,10 @@ const Button: React.FC<ButtonProps> = ({
       width={width}
       height={height}
       activeOpacity={0.5}
+      secondary={secondary}
+      margin={margin}
     >
-      <TextButton>{children}</TextButton>
+      <TextButton secondary={secondary}>{children}</TextButton>
     </Touchable>
   )
 }

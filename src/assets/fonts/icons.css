@@ -1,25 +1,26 @@
 @font-face {
-    font-family: "icons";
-    src: url("./icons.ttf?de2a09c67c02c2dab91a0f7719397bd4") format("truetype");
+  font-family: 'icons';
+  src: url('./icons.ttf?de2a09c67c02c2dab91a0f7719397bd4') format('truetype');
 }
 
-i[class^="icon-"]:before, i[class*=" icon-"]:before {
-    font-family: icons !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+i[class^='icon-']:before,
+i[class*=' icon-']:before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-brazil:before {
-    content: "\f101";
+  content: '\f101';
 }
 .icon-english:before {
-    content: "\f102";
+  content: '\f102';
 }
 .icon-french:before {
-    content: "\f103";
+  content: '\f103';
 }

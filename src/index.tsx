@@ -6,6 +6,8 @@ import { NavigationContainer } from '@react-navigation/native'
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
     'custom-font-icon': require('./assets/fonts/icons.ttf'),
+    ExtraLight: require('./assets/fonts/Nunito-ExtraLight.ttf'),
+    ExtraLightItalic: require('./assets/fonts/Nunito-ExtraLightItalic.ttf'),
     Light: require('./assets/fonts/Nunito-Light.ttf'),
     LightItalic: require('./assets/fonts/Nunito-LightItalic.ttf'),
     Regular: require('./assets/fonts/Nunito-Regular.ttf'),
