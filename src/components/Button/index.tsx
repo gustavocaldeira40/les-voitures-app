@@ -10,6 +10,7 @@ interface ButtonProps {
   onPress: () => void
   secondary?: boolean
   margin?: string | number
+  style?: any
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   onPress,
   secondary,
   margin,
+  style,
 }) => {
   return (
     <Touchable
@@ -28,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
       activeOpacity={0.5}
       secondary={secondary}
       margin={margin}
+      style={style}
     >
       <TextButton secondary={secondary}>{children}</TextButton>
     </Touchable>

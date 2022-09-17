@@ -81,7 +81,7 @@ const Home: React.FC = () => {
         <ContainerAction>
           <ActionsButton
             icon={<AntDesign name="plus" size={25} color="white" />}
-            description="Adicionar Carro"
+            description="Adicionar Carros"
             onPress={() => navigation.navigate('AddCars')}
           />
           <ActionsButton

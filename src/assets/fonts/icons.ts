@@ -1,15 +1,13 @@
-export type IconsId = 'brazil' | 'english' | 'french'
+export type IconsId =
+  | "dots";
 
-export type IconsKey = 'Brazil' | 'English' | 'French'
+export type IconsKey =
+  | "Dots";
 
 export enum Icons {
-  Brazil = 'brazil',
-  English = 'english',
-  French = 'french',
+  Dots = "dots",
 }
 
 export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
-  [Icons.Brazil]: '61697',
-  [Icons.English]: '61698',
-  [Icons.French]: '61699',
-}
+  [Icons.Dots]: "61697",
+};

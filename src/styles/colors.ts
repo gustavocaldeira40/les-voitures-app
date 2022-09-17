@@ -5,9 +5,10 @@ export const Colors = {
   subTitle: '#DCDCDC',
   description: '#A8A8A8',
   lightGray: '#DADADA',
+  icon: '#d9d9d9',
   LightDark: '#9f9f9f',
+  TextClose: '#373737',
+  white: '#FFFFFF',
   success: '#65E04D',
   error: '#D23434',
-
-  white: '#FFFFFF',
 }

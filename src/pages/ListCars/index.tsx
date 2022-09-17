@@ -30,7 +30,6 @@ const ListCars: React.FC = () => {
   const [data, setData] = useState<CarsData[]>([])
 
   const [showHeaderFloating, setShowHeaderFloating] = useState(false)
-  const [scrollY, setScrollY] = useState(new Animated.Value(0))
 
   /*
    *   HOOKS
@@ -68,7 +67,31 @@ const ListCars: React.FC = () => {
   }
 
   const renderItem = (item: CarsData, index: number) => {
-    return <Card item={item} />
+    return <Card key={index} item={item} changeRemoveCar={changeRemoveCar} />
+  }
+
+  const changeRemoveCar = async (item: CarsData) => {
+    setLoading(true)
+    try {
+      const data = await EndPoints.removeCar(item?._id)
+
+      if (data) {
+        showMessage({
+          message: 'Veículo apagado com sucesso !',
+          type: 'success',
+          duration: 3000,
+        })
+        await getDatas()
+      }
+    } catch (error) {
+      console.log('ERROR THE DELETE', error)
+      showMessage({
+        message: 'Erro ao Apagar Veículo',
+        type: 'danger',
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   const reloadItems = () => {

@@ -21,7 +21,6 @@ const Header: React.FC<HeaderProps> = ({ withoutLeftSide, title }) => {
   /*
    *   STATES
    */
-  const translation = useRef(new Animated.Value(-100)).current
 
   /*
    *   HOOKS
