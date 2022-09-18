@@ -7,8 +7,8 @@ export const Touchable = styled.TouchableOpacity`
   border-radius: 20px;
   justify-content: space-around;
   align-items: center;
-  padding: 30px 20px;
-  margin: 20px 10px;
+  padding: 20px;
+  /* margin: 20px 10px; */
 `
 
 export const TextDescription = styled.Text`

@@ -11,7 +11,8 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import Card from '../../components/Card'
 import NoItem from '../../components/NoItem'
 import HeaderFloating from '../../components/HeaderFloating'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import { ListCarsReloadData } from '../../types/list-cars-reload'
 
 const ListCars: React.FC = () => {
   /*
@@ -35,6 +36,7 @@ const ListCars: React.FC = () => {
    *   HOOKS
    */
   const navigation = useNavigation<any>()
+  const { params } = useRoute()
 
   /*
    *   LAYOUT
@@ -111,6 +113,12 @@ const ListCars: React.FC = () => {
       getDatas()
     }
   }, [])
+
+  useEffect(() => {
+    if (params !== undefined) {
+      getDatas()
+    }
+  }, [params])
 
   return (
     <>

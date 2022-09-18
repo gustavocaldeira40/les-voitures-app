@@ -1,5 +1,5 @@
 import { useFormik } from 'formik'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from '../../components/Header'
 import HeaderTitle from '../../components/HeaderTitle'
 
@@ -13,7 +13,7 @@ import {
 } from './style'
 import * as yup from 'yup'
 import { showMessage } from 'react-native-flash-message'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import Input from '../../components/Input'
 
 import Button from '../../components/Button'
@@ -21,6 +21,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import InputMask from '../../components/InputMask'
 import { EndPoints } from '../../services/endPoints'
 import moment from 'moment'
+import { ParamsData } from '../../types/params'
 
 const AddCars: React.FC = () => {
   /*
@@ -45,6 +46,7 @@ const AddCars: React.FC = () => {
    */
   const navigation = useNavigation<any>()
 
+  const { params } = useRoute()
   /*
    *   LAYOUT
    */
@@ -63,6 +65,7 @@ const AddCars: React.FC = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
+      _id: '',
       title: '',
       brand: '',
       price: '',
@@ -75,7 +78,7 @@ const AddCars: React.FC = () => {
       price: yup.string().required('Inform the price'),
       age: yup.string().required('Inform the age'),
     }),
-    onSubmit: async () => {
+    onSubmit: async (_values,set) => {
       setLoading(true)
       try {
         const actuallyDate = new Date()
@@ -93,6 +96,21 @@ const AddCars: React.FC = () => {
           age: Number(values?.age),
         }
 
+        if (params !== undefined) {
+          const data = await EndPoints.updateCar(values?._id, formData)
+          console.log('ATUALIZOU', data)
+
+          if (data) {
+            resetForm()
+            navigation.navigate('ListCars', { reload: true })
+
+            showMessage({
+              message: 'Car Edited Successfully',
+              type: 'success',
+            })
+          }
+        }
+
         console.log('FORMDATA,', formData)
 
         const data = await EndPoints.createCar(formData)
@@ -103,7 +121,9 @@ const AddCars: React.FC = () => {
           showMessage({ message: 'Car Created Successfully', type: 'success' })
         }
       } catch (error) {
+
         console.log('ERROR THE SAVE', error)
+        
         showMessage({
           message: 'Error the save the user , Try Again !',
           type: 'danger',
@@ -117,10 +137,22 @@ const AddCars: React.FC = () => {
   /*
    *   FUNCTIONS
    */
+  const setFields = () => {}
 
   /*
    *   EFFECTS
    */
+  useEffect(() => {
+    if (params !== undefined) {
+      const { _id, title, brand, price, age } = (params as ParamsData)?.item
+
+      setFieldValue('_id', _id)
+      setFieldValue('title', title)
+      setFieldValue('brand', brand)
+      setFieldValue('price', price)
+      setFieldValue('age', age)
+    }
+  }, [params])
 
   return (
     <>

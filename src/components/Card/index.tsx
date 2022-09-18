@@ -19,6 +19,7 @@ import { Colors } from '../../styles/colors'
 import ModalDefault from '../../components/Modal'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { Animated } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 interface CardProps {
   item: CarsData
@@ -44,13 +45,14 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
   /*
    *   HOOKS
    */
+  const navigation = useNavigation<any>()
 
   /*
    *   LAYOUT
    */
 
   /*
-   *   ANIMATINO
+   *   ANIMATION
    */
 
   const fadeAnim = useRef(new Animated.Value(0)).current
@@ -84,6 +86,10 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
     }
   }
 
+  const handleEdit = (item: CarsData) => {
+    navigation.navigate('AddCars', { item })
+  }
+
   /*
    *   EFFECTS
    */
@@ -106,7 +112,7 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
           shadowRadius: 3,
         }}
       >
-        <TextTitle>{item?.title}</TextTitle>
+        <TextTitle numberOfLines={1}>{item?.title}</TextTitle>
         <Line />
 
         <ContainerDescription>
@@ -129,7 +135,9 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
             width="70%"
             margin="15px 0"
             secondary
-            onPress={() => {}}
+            onPress={() => {
+              handleEdit(item)
+            }}
           >
             Editar
           </Button>
