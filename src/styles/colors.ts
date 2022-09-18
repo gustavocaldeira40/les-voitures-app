@@ -1,6 +1,7 @@
 export const Colors = {
   primary: '#000000',
   secondary: '#ED2939',
+  tertiary: '#5A0F15',
   bgCard: '#0B0B0B',
   subTitle: '#DCDCDC',
   description: '#A8A8A8',

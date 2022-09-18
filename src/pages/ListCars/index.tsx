@@ -100,6 +100,7 @@ const ListCars: React.FC = () => {
 
   const reloadItems = () => {
     setRefreshing(true)
+
     getDatas()
   }
 

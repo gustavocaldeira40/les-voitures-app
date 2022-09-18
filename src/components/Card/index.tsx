@@ -18,7 +18,7 @@ import {
 import { Colors } from '../../styles/colors'
 import ModalDefault from '../../components/Modal'
 import { FontAwesome5 } from '@expo/vector-icons'
-import { Animated } from 'react-native'
+import { Animated, TouchableWithoutFeedback } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 interface CardProps {
@@ -90,6 +90,12 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
     navigation.navigate('AddCars', { item })
   }
 
+  const handleSeeMore = (item: CarsData) => {
+    if (item?._id) {
+      navigation.navigate('SeeMore', { id: item?._id })
+    }
+  }
+
   /*
    *   EFFECTS
    */
@@ -102,61 +108,75 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
         handleClose={() => setShowModalDelete(false)}
         handleOk={() => {}}
       />
-
-      <Container
-        style={{
-          elevation: 2,
-          shadowOffset: { width: -2, height: 4 },
-          shadowColor: '#fff',
-          shadowOpacity: 0.2,
-          shadowRadius: 3,
+      <TouchableWithoutFeedback
+        onPress={() => {
+          setShowMenu(false)
+          if (showMenu) {
+            changeShowMenu()
+          }
         }}
       >
-        <TextTitle numberOfLines={1}>{item?.title}</TextTitle>
-        <Line />
+        <Container
+          style={{
+            elevation: 2,
+            shadowOffset: { width: -2, height: 4 },
+            shadowColor: '#fff',
+            shadowOpacity: 0.2,
+            shadowRadius: 3,
+          }}
+        >
+          <TextTitle numberOfLines={1}>{item?.title}</TextTitle>
+          <Line />
 
-        <ContainerDescription>
-          <ContainerItem>
-            <TextDescription>Marca: </TextDescription>
-            <TextDescription isDescription>{item?.brand}</TextDescription>
-          </ContainerItem>
-          <ContainerItem>
-            <TextDescription>Price: </TextDescription>
-            <TextDescription isDescription>{item?.price}</TextDescription>
-          </ContainerItem>
-          <ContainerItem>
-            <TextDescription>Age: </TextDescription>
-            <TextDescription isDescription>{item?.age}</TextDescription>
-          </ContainerItem>
-        </ContainerDescription>
-        <ContainerActions>
-          <Button
-            height="40px"
-            width="70%"
-            margin="15px 0"
-            secondary
-            onPress={() => {
-              handleEdit(item)
-            }}
-          >
-            Editar
-          </Button>
-          <ContainerDots onPress={() => changeShowMenu()}>
-            <Dots name="dots" color={Colors.icon} size={15} />
-          </ContainerDots>
+          <ContainerDescription>
+            <ContainerItem>
+              <TextDescription>Marca: </TextDescription>
+              <TextDescription isDescription>{item?.brand}</TextDescription>
+            </ContainerItem>
+            <ContainerItem>
+              <TextDescription>Price: </TextDescription>
+              <TextDescription isDescription>{item?.price}</TextDescription>
+            </ContainerItem>
+            <ContainerItem>
+              <TextDescription>Age: </TextDescription>
+              <TextDescription isDescription>{item?.age}</TextDescription>
+            </ContainerItem>
+          </ContainerDescription>
+          <ContainerActions>
+            <Button
+              height="40px"
+              width="70%"
+              margin="15px 0"
+              secondary
+              onPress={() => {
+                handleEdit(item)
+              }}
+            >
+              Editar
+            </Button>
+            <ContainerDots onPress={() => changeShowMenu()}>
+              <Dots name="dots" color={Colors.icon} size={15} />
+            </ContainerDots>
 
-          <ContainerMenu style={{ opacity: fadeAnim }}>
-            <ContainerItemMenu>
-              <FontAwesome5 name="eye" size={15} color={Colors.icon} />
-              <TextMenu>Ver mais</TextMenu>
-            </ContainerItemMenu>
-            <ContainerItemMenu onPress={() => changeRemoveCar(item)}>
-              <FontAwesome5 name="trash" size={15} color={Colors.secondary} />
-              <TextMenu>Apagar</TextMenu>
-            </ContainerItemMenu>
-          </ContainerMenu>
-        </ContainerActions>
-      </Container>
+            {showMenu && (
+              <ContainerMenu style={{ opacity: fadeAnim }}>
+                <ContainerItemMenu onPress={() => handleSeeMore(item)}>
+                  <FontAwesome5 name="eye" size={15} color={Colors.icon} />
+                  <TextMenu>Ver mais</TextMenu>
+                </ContainerItemMenu>
+                <ContainerItemMenu onPress={() => changeRemoveCar(item)}>
+                  <FontAwesome5
+                    name="trash"
+                    size={15}
+                    color={Colors.secondary}
+                  />
+                  <TextMenu>Apagar</TextMenu>
+                </ContainerItemMenu>
+              </ContainerMenu>
+            )}
+          </ContainerActions>
+        </Container>
+      </TouchableWithoutFeedback>
     </>
   )
 }

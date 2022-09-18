@@ -22,6 +22,7 @@ import InputMask from '../../components/InputMask'
 import { EndPoints } from '../../services/endPoints'
 import moment from 'moment'
 import { ParamsData } from '../../types/params'
+import LoadingSpinner from '../../components/LoadingSpinner'
 
 const AddCars: React.FC = () => {
   /*
@@ -78,7 +79,7 @@ const AddCars: React.FC = () => {
       price: yup.string().required('Inform the price'),
       age: yup.string().required('Inform the age'),
     }),
-    onSubmit: async (_values,set) => {
+    onSubmit: async (_values, set) => {
       setLoading(true)
       try {
         const actuallyDate = new Date()
@@ -121,9 +122,8 @@ const AddCars: React.FC = () => {
           showMessage({ message: 'Car Created Successfully', type: 'success' })
         }
       } catch (error) {
-
         console.log('ERROR THE SAVE', error)
-        
+
         showMessage({
           message: 'Error the save the user , Try Again !',
           type: 'danger',
@@ -156,6 +156,7 @@ const AddCars: React.FC = () => {
 
   return (
     <>
+      <LoadingSpinner show={loading} />
       <Container>
         <MainOverlay
           colors={[Colors.secondary, Colors.primary]}
