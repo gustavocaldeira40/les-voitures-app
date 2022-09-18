@@ -1,13 +1,11 @@
-export type IconsId =
-  | "dots";
+export type IconsId = 'dots'
 
-export type IconsKey =
-  | "Dots";
+export type IconsKey = 'Dots'
 
 export enum Icons {
-  Dots = "dots",
+  Dots = 'dots',
 }
 
 export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
-  [Icons.Dots]: "61697",
-};
+  [Icons.Dots]: '61697',
+}

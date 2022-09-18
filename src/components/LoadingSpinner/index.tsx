@@ -1,6 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import Spinner from 'react-native-loading-spinner-overlay/lib'
+import { translate } from '../../services/i18n'
 import { Colors } from '../../styles/colors'
 
 interface LoadingSpinnerProps {
@@ -14,7 +15,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ show, text }) => {
       visible={show}
       size={50}
       animation="fade"
-      textContent={text || 'Loading...'}
+      textContent={text || `${translate('Loading')}...`}
       textStyle={{ color: Colors.white }}
     />
   )

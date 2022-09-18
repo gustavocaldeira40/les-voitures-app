@@ -8,7 +8,6 @@ import {
 } from './style'
 import HeaderTitle from '../../components/HeaderTitle'
 import SelectItem from '../../components/SelectItem'
-import { Platform, NativeModules } from 'react-native'
 import BrasilFlag from '../../assets/images/selectLanguages/brasil.png'
 import EnglishFlag from '../../assets/images/selectLanguages/english.png'
 import FrenchFlag from '../../assets/images/selectLanguages/french.png'
@@ -18,6 +17,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { showMessage } from 'react-native-flash-message'
 import { FlagsProps } from 'types/flags'
 import { MoreScreenData } from '../../types/more'
+import { setLanguageToI18n, translate } from '../../services/i18n'
 
 const SelectLanguage: React.FC = () => {
   /*
@@ -32,12 +32,7 @@ const SelectLanguage: React.FC = () => {
    *   STATES
    */
 
-  const [flags, setFlags] = useState([
-    { flag: BrasilFlag, description: 'Português' },
-    { flag: FrenchFlag, description: 'França' },
-    { flag: EnglishFlag, description: 'Inglês' },
-  ])
-  const [selectedFlag, setSelectedFlag] = useState<FlagsProps>(null as any)
+  const [selectedLanguage, setSelectedLanguage] = useState(null as any)
 
   /*
    *   HOOKS
@@ -58,31 +53,34 @@ const SelectLanguage: React.FC = () => {
    */
 
   const nextStep = async () => {
-    if (!selectedFlag) {
+    if (!selectedLanguage) {
       showMessage({
-        message: 'Selecione um idioma',
-        description:
-          'Para prosseguirmos é necessário selecionar um idioma abaixo',
+        message: translate('Select one of the languages !'),
+
         type: 'danger',
       })
       return
     }
 
-    await AppStorage.storeData('@lesVoitures:language', selectedFlag)
+    await AppStorage.storeData('@lesVoitures:language', selectedLanguage)
 
-    if (params !== undefined) {
-      console.log('PARAMS', params)
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Redirect' }],
+    })
+    // if (params !== undefined) {
+    //   console.log('PARAMS', params)
 
-      const { moreScreen } = params as MoreScreenData
-      if (moreScreen) {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'Redirect' }],
-        })
-      }
-    } else {
-      navigation.navigate('Register')
-    }
+    //   const { moreScreen } = params as MoreScreenData
+    //   if (moreScreen) {
+    //     navigation.reset({
+    //       index: 0,
+    //       routes: [{ name: 'Redirect' }],
+    //     })
+    //   }
+    // } else {
+    //   navigation.navigate('Register')
+    // }
   }
 
   /*
@@ -99,25 +97,45 @@ const SelectLanguage: React.FC = () => {
         />
 
         <HeaderTitle
-          title="Idioma"
-          subTitle="Selecione seu"
-          description="Para uma melhor experiência, selecione abaixo."
+          title={translate('Language')}
+          subTitle={translate('Select your')}
+          description={translate(
+            'For the best experience, select your language below',
+          )}
         />
         <ContaninerSelect>
-          {flags?.map((item, index) => {
-            return (
-              <SelectItem
-                onPress={() => setSelectedFlag(item)}
-                source={item?.flag}
-                key={index}
-                description={item?.description}
-                isFocused={item?.description === selectedFlag?.description}
-              />
-            )
-          })}
+          <SelectItem
+            onPress={() => {
+              setSelectedLanguage('fr_FR')
+              setLanguageToI18n('fr_FR' as any)
+            }}
+            source={FrenchFlag}
+            isFocused={selectedLanguage === 'fr_FR'}
+            description={translate('French')}
+          />
+
+          <SelectItem
+            onPress={() => {
+              setSelectedLanguage('pt_BR')
+              setLanguageToI18n('pt_BR' as any)
+            }}
+            source={BrasilFlag}
+            isFocused={selectedLanguage === 'pt_BR'}
+            description={translate('Portuguese')}
+          />
+
+          <SelectItem
+            onPress={() => {
+              setSelectedLanguage('en_US')
+              setLanguageToI18n('en_US' as any)
+            }}
+            source={EnglishFlag}
+            isFocused={selectedLanguage === 'en_US'}
+            description={translate('English')}
+          />
         </ContaninerSelect>
         <ContainerButton>
-          <Button onPress={() => nextStep()}>Próximo</Button>
+          <Button onPress={() => nextStep()}>{translate('Next')}</Button>
         </ContainerButton>
       </Container>
     </>

@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { Brazil, English, French } from '../Icon'
 import { Container, ImageFlag, TextDescription } from './style'
 
 interface SelectItemProps {

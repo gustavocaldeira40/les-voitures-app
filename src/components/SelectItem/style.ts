@@ -10,7 +10,6 @@ export const Container = styled.TouchableOpacity<any>`
   margin: ${Metrics.marginSelectItem};
   flex-direction: row;
   align-items: center;
-  /* margin: 10px 0; */
 `
 
 export const ImageFlag = styled.Image`
@@ -20,7 +19,7 @@ export const ImageFlag = styled.Image`
 `
 
 export const TextDescription = styled.Text<any>`
-  font-family: ${(props) => (props.isFocused ? 'Bold' : 'LightItalic')};
+  font-family: ${(props) => (props.isFocused ? 'Bold' : 'Light')};
   font-size: 20px;
   text-align: center;
   margin-right: 40px;

@@ -12,7 +12,8 @@ import {
 import { Colors } from '../../styles/colors'
 import Loading from '../../components/Loading'
 import AppStorage from '../../services/appStorage'
-import { NavigationProp, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
+import { setLanguageToI18n } from '../../services/i18n'
 
 const RedirectScreen: React.FC = () => {
   /*
@@ -49,6 +50,12 @@ const RedirectScreen: React.FC = () => {
     const language = await AppStorage.getData('@lesVoitures:language')
     const user = await AppStorage.getData('@lesVoitures:userName')
 
+    console.log('LANGUAGE', language)
+
+    if (language) {
+      setLanguageToI18n(language)
+    }
+
     if (!language) {
       navigation.reset({
         index: 0,
@@ -69,7 +76,7 @@ const RedirectScreen: React.FC = () => {
 
   const removeKeys = async () => {
     await AppStorage.remove('@lesVoitures:language')
-    await AppStorage.remove('@lesVoitures:user')
+    await AppStorage.remove('@lesVoitures:userName')
   }
 
   /*

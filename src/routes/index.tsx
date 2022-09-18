@@ -48,11 +48,7 @@ const Routes: React.FC = () => {
           component={SeeMore}
           options={{ headerShown: false }}
         />
-        <Screen
-          name="More"
-          component={More}
-          options={{ headerShown: false }}
-        />
+        <Screen name="More" component={More} options={{ headerShown: false }} />
       </Navigator>
 
       <FlashMessage

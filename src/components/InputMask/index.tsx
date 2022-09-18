@@ -34,7 +34,6 @@ const InputMask: React.FC<InputMaskProps> = ({
           mask={isCurrency ? Masks.BRL_CURRENCY : mask}
           placeholderTextColor={Colors.lightGray}
           keyboardType="numeric"
-
         />
       </ContainerInput>
       {errorMessage && <TextError>{errorMessage}</TextError>}

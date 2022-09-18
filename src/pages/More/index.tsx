@@ -71,9 +71,7 @@ const More: React.FC = () => {
 
       <TouchableItem
         activeOpacity={0.5}
-        onPress={() =>
-          navigation.navigate('Register', { moreScreen: true })
-        }
+        onPress={() => navigation.navigate('Register', { moreScreen: true })}
       >
         <ContainerIcon>
           <MaterialCommunityIcons

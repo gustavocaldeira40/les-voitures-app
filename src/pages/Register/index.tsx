@@ -12,6 +12,7 @@ import { showMessage } from 'react-native-flash-message'
 import AppStorage from '../../services/appStorage'
 import { useNavigation } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
+import { translate } from '../../services/i18n'
 
 const Register: React.FC = () => {
   /*
@@ -47,7 +48,7 @@ const Register: React.FC = () => {
       },
       enableReinitialize: true,
       validationSchema: yup.object().shape({
-        name: yup.string().required('Inform the your name'),
+        name: yup.string().required(translate('Inform the your name')),
       }),
       onSubmit: async () => {
         setLoading(true)
@@ -60,8 +61,9 @@ const Register: React.FC = () => {
           })
         } catch (error) {
           console.log('ERROR THE SAVE', error)
+
           showMessage({
-            message: 'Error the save the user , Try Again !',
+            message: translate('Error the save the user , Try Again!'),
             type: 'danger',
           })
         } finally {
@@ -81,7 +83,9 @@ const Register: React.FC = () => {
   return (
     <>
       <StatusBar translucent backgroundColor="transparent" style="light" />
-      <LoadingSpinner show={loading} text="Loading ..." />
+
+      <LoadingSpinner show={loading} />
+
       <Container>
         <MainOverlay
           colors={[Colors.secondary, Colors.primary]}
@@ -89,24 +93,28 @@ const Register: React.FC = () => {
           end={{ x: 0.5, y: 0.4 }}
         />
         <ContainerTop>
-          <Header />
+          {/* <Header /> */}
           <HeaderTitle
-            title="Cadastrais"
-            subTitle="Informações"
-            description="Ok, Agora para sua experîencia preencha o campo abaixo."
-            hasHeader
+            title={translate('Cadastral')}
+            subTitle={translate('Information')}
+            description={translate(
+              'Ok, Now for your experience, fill in the field below',
+            )}
+            // hasHeader
           />
           <Input
             passRef={nameFullRef}
             defaultValue={values.name}
             onChangeText={handleChange('name')}
-            placeholder="Name"
+            placeholder={translate('Name')}
             errorMessage={errors.name}
             marginTop="20px"
           />
         </ContainerTop>
         <ContainerButton>
-          <Button onPress={handleSubmit}>Iniciar</Button>
+          <Button disabled={!isValid} onPress={handleSubmit}>
+            {translate('Start')}
+          </Button>
         </ContainerButton>
       </Container>
     </>

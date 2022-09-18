@@ -10,6 +10,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { Feather } from '@expo/vector-icons'
 import Octicons from 'react-native-vector-icons/Octicons'
 import { useNavigation } from '@react-navigation/native'
+import { translate } from '../../services/i18n'
 
 const Home: React.FC = () => {
   /*
@@ -63,6 +64,8 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <StatusBar translucent style="light" backgroundColor="transparent" />
+
       <Container>
         <MainOverlay
           colors={[Colors.secondary, Colors.primary]}
@@ -70,28 +73,34 @@ const Home: React.FC = () => {
           end={{ x: 0.5, y: 0.4 }}
         />
 
-        <Header title={`Ola, ${userName}`} withoutLeftSide />
+        <Header title={`${translate('Hi')}, ${userName}`} withoutLeftSide />
 
         <HeaderTitle
-          title="Les’Voitures"
-          subTitle="Bem-vindo ao"
-          description="Abaixo você pode editar, criar e divulgar seus carros"
+          title={translate('Les’Voitures')}
+          subTitle={translate('Welcome to')}
+          description={translate(
+            'Below you can edit, create and promote your cars',
+          )}
           hasHeader
         />
         <ContainerAction>
           <ActionsButton
-            icon={<AntDesign name="plus" size={25} color="white" />}
-            description="Adicionar Carros"
+            icon={<AntDesign name="plus" size={25} color={Colors.white} />}
+            description={translate('Add Cars')}
             onPress={() => navigation.navigate('AddCars')}
           />
           <ActionsButton
-            icon={<Octicons name="list-unordered" size={25} color="white" />}
-            description="Lista de Carros"
+            icon={
+              <Octicons name="list-unordered" size={25} color={Colors.white} />
+            }
+            description={translate('Car List')}
             onPress={() => navigation.navigate('ListCars')}
           />
           <ActionsButton
-            icon={<Feather name="more-horizontal" size={25} color="white" />}
-            description="Mais"
+            icon={
+              <Feather name="more-horizontal" size={25} color={Colors.white} />
+            }
+            description={translate('More')}
             onPress={() => navigation.navigate('More')}
             style={{ marginTop: 20 }}
           />
