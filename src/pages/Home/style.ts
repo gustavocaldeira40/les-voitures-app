@@ -16,7 +16,8 @@ export const MainOverlay = styled(LinearGradient)`
 
 export const ContainerAction = styled.View`
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 `

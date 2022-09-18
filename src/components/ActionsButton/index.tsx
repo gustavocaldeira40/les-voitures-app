@@ -5,12 +5,14 @@ import { TouchableOpacityProps } from 'react-native'
 interface ActionsButtonProps extends TouchableOpacityProps {
   description: string
   icon: JSX.Element
+  style?: any
 }
 
 const ActionsButton: React.FC<ActionsButtonProps> = ({
   icon,
   description,
   onPress,
+  style,
 }) => {
   return (
     <Touchable
@@ -24,6 +26,7 @@ const ActionsButton: React.FC<ActionsButtonProps> = ({
         },
         shadowOpacity: 0.75,
         shadowRadius: 3.84,
+        ...style,
       }}
     >
       {icon}

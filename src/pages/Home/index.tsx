@@ -7,7 +7,7 @@ import Header from '../../components/Header'
 import AppStorage from '../../services/appStorage'
 import ActionsButton from '../../components/ActionsButton'
 import { AntDesign } from '@expo/vector-icons'
-import { MaterialIcons } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'
 import Octicons from 'react-native-vector-icons/Octicons'
 import { useNavigation } from '@react-navigation/native'
 
@@ -88,6 +88,12 @@ const Home: React.FC = () => {
             icon={<Octicons name="list-unordered" size={25} color="white" />}
             description="Lista de Carros"
             onPress={() => navigation.navigate('ListCars')}
+          />
+          <ActionsButton
+            icon={<Feather name="more-horizontal" size={25} color="white" />}
+            description="Mais"
+            onPress={() => navigation.navigate('More')}
+            style={{ marginTop: 20 }}
           />
         </ContainerAction>
       </Container>

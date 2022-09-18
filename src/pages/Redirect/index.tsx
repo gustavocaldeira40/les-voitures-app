@@ -50,11 +50,20 @@ const RedirectScreen: React.FC = () => {
     const user = await AppStorage.getData('@lesVoitures:userName')
 
     if (!language) {
-      navigation.navigate('SelectLanguage')
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'SelectLanguage' }],
+      })
     } else if (!user) {
-      navigation.navigate('Register')
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Register' }],
+      })
     } else {
-      navigation.navigate('Home')
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Home' }],
+      })
     }
   }
 

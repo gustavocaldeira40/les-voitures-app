@@ -10,6 +10,7 @@ export const Colors = {
   LightDark: '#9f9f9f',
   TextClose: '#373737',
   white: '#FFFFFF',
+  bgMore: '#101010',
   success: '#65E04D',
   error: '#D23434',
 }

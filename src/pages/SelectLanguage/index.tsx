@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Colors } from '../../styles/colors'
 import {
   Container,
@@ -14,9 +14,10 @@ import EnglishFlag from '../../assets/images/selectLanguages/english.png'
 import FrenchFlag from '../../assets/images/selectLanguages/french.png'
 import Button from '../../components/Button'
 import AppStorage from '../../services/appStorage'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import { showMessage } from 'react-native-flash-message'
 import { FlagsProps } from 'types/flags'
+import { MoreScreenData } from '../../types/more'
 
 const SelectLanguage: React.FC = () => {
   /*
@@ -42,6 +43,7 @@ const SelectLanguage: React.FC = () => {
    *   HOOKS
    */
   const navigation = useNavigation<any>()
+  const { params } = useRoute()
 
   /*
    *   LAYOUT
@@ -68,7 +70,19 @@ const SelectLanguage: React.FC = () => {
 
     await AppStorage.storeData('@lesVoitures:language', selectedFlag)
 
-    navigation.navigate('Register')
+    if (params !== undefined) {
+      console.log('PARAMS', params)
+
+      const { moreScreen } = params as MoreScreenData
+      if (moreScreen) {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Redirect' }],
+        })
+      }
+    } else {
+      navigation.navigate('Register')
+    }
   }
 
   /*

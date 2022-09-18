@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Animated, TouchableWithoutFeedback, View } from 'react-native'
+import {
+  Animated,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native'
 import { SimpleLineIcons } from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons'
 import {
@@ -83,16 +88,12 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <Container>
       {withoutLeftSide ? null : (
-        <TouchableWithoutFeedback
-          hitSlop={{ bottom: 20, left: 20, right: 20, top: 20 }}
+        <TouchableOpacity
+          hitSlop={{ bottom: 30, left: 30, right: 30, top: 30 }}
+          onPress={() => navigation.goBack()}
         >
-          <SimpleLineIcons
-            name="arrow-left"
-            size={16}
-            color="white"
-            onPress={() => navigation.goBack()}
-          />
-        </TouchableWithoutFeedback>
+          <SimpleLineIcons name="arrow-left" size={16} color="white" />
+        </TouchableOpacity>
       )}
 
       {title && <TextTitle withRightSide={withRightSide}>{title}</TextTitle>}

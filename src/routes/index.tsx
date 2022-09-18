@@ -9,6 +9,7 @@ import Home from '../pages/Home'
 import ListCars from '../pages/ListCars'
 import AddCars from '../pages/AddCars'
 import SeeMore from '../pages/SeeMore'
+import More from '../pages/More'
 
 const { Navigator, Screen } = createStackNavigator()
 
@@ -45,6 +46,11 @@ const Routes: React.FC = () => {
         <Screen
           name="SeeMore"
           component={SeeMore}
+          options={{ headerShown: false }}
+        />
+        <Screen
+          name="More"
+          component={More}
           options={{ headerShown: false }}
         />
       </Navigator>

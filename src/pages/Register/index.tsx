@@ -11,6 +11,7 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import { showMessage } from 'react-native-flash-message'
 import AppStorage from '../../services/appStorage'
 import { useNavigation } from '@react-navigation/native'
+import { StatusBar } from 'expo-status-bar'
 
 const Register: React.FC = () => {
   /*
@@ -53,7 +54,10 @@ const Register: React.FC = () => {
         try {
           await AppStorage.storeData('@lesVoitures:userName', values?.name)
 
-          navigation?.navigate('Home')
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Home' }],
+          })
         } catch (error) {
           console.log('ERROR THE SAVE', error)
           showMessage({
@@ -76,6 +80,7 @@ const Register: React.FC = () => {
 
   return (
     <>
+      <StatusBar translucent backgroundColor="transparent" style="light" />
       <LoadingSpinner show={loading} text="Loading ..." />
       <Container>
         <MainOverlay
