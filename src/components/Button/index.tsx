@@ -1,9 +1,9 @@
 import React from 'react'
-import { View } from 'react-native'
+import { TouchableOpacityProps } from 'react-native'
 
 import { TextButton, Touchable } from './style'
 
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityProps {
   children: React.ReactNode
   width?: string | number
   height?: string | number
@@ -11,6 +11,7 @@ interface ButtonProps {
   secondary?: boolean
   margin?: string | number
   style?: any
+  disabled?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   secondary,
   margin,
   style,
+  disabled,
 }) => {
   return (
     <Touchable
@@ -31,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({
       secondary={secondary}
       margin={margin}
       style={style}
+      disabled={disabled}
     >
       <TextButton secondary={secondary}>{children}</TextButton>
     </Touchable>

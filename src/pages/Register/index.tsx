@@ -97,6 +97,7 @@ const Register: React.FC = () => {
             onChangeText={handleChange('name')}
             placeholder="Name"
             errorMessage={errors.name}
+            marginTop="20px"
           />
         </ContainerTop>
         <ContainerButton>

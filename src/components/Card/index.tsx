@@ -97,7 +97,15 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
         handleOk={() => {}}
       />
 
-      <Container>
+      <Container
+        style={{
+          elevation: 2,
+          shadowOffset: { width: -2, height: 4 },
+          shadowColor: '#fff',
+          shadowOpacity: 0.2,
+          shadowRadius: 3,
+        }}
+      >
         <TextTitle>{item?.title}</TextTitle>
         <Line />
 
@@ -125,10 +133,7 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
           >
             Editar
           </Button>
-          <ContainerDots
-            onBlur={() => setShowMenu(false)}
-            onPress={() => changeShowMenu()}
-          >
+          <ContainerDots onPress={() => changeShowMenu()}>
             <Dots name="dots" color={Colors.icon} size={15} />
           </ContainerDots>
 

@@ -4,7 +4,12 @@ import { Colors } from './../../styles/colors'
 export const Touchable = styled.TouchableOpacity<any>`
   width: ${(props) => (props.width ? props.width : '50%')};
   height: ${(props) => (props.height ? props.height : '56px')};
-  background: ${(props) => (props.secondary ? 'transparent' : Colors.white)};
+  background: ${(props) =>
+    props.secondary
+      ? 'transparent'
+      : props.disabled
+      ? 'rgba(255, 255, 255, 0.5)'
+      : Colors.white};
   border: ${(props) =>
     props.secondary ? '1px solid #ffffff' : '1px solid #000000'};
   border-radius: 50px;
@@ -15,7 +20,7 @@ export const Touchable = styled.TouchableOpacity<any>`
 
 export const TextButton = styled.Text<any>`
   font-family: ${(props) => (props.secondary ? 'Medium' : 'Black')};
-  font-size: 15px;
+  font-size: 14px;
   text-transform: uppercase;
 
   text-align: center;

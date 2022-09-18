@@ -1,6 +1,4 @@
-import CurrencyInput from 'react-native-currency-input'
-import { TextInput } from 'react-native'
-
+import MaskInput from 'react-native-mask-input'
 import styled from 'styled-components/native'
 import { Colors } from '../../styles/colors'
 
@@ -16,7 +14,7 @@ export const ContainerInput = styled.View<any>`
   margin-top: ${(props) => (props.marginTop ? props.marginTop : 0)};
 `
 
-export const TextInputPersonalized = styled(TextInput)`
+export const InputMaskStyled = styled(MaskInput)`
   color: white;
   background-color: transparent;
   font-family: 'Medium';

@@ -73,15 +73,17 @@ const ListCars: React.FC = () => {
   const changeRemoveCar = async (item: CarsData) => {
     setLoading(true)
     try {
-      const data = await EndPoints.removeCar(item?._id)
+      if (item?._id) {
+        const data = await EndPoints.removeCar(item?._id)
 
-      if (data) {
-        showMessage({
-          message: 'Veículo apagado com sucesso !',
-          type: 'success',
-          duration: 3000,
-        })
-        await getDatas()
+        if (data) {
+          showMessage({
+            message: 'Veículo apagado com sucesso !',
+            type: 'success',
+            duration: 3000,
+          })
+          await getDatas()
+        }
       }
     } catch (error) {
       console.log('ERROR THE DELETE', error)
@@ -132,6 +134,7 @@ const ListCars: React.FC = () => {
 
         {data?.length > 0 ? (
           <FlatList
+            contentContainerStyle={{ paddingBottom: 50 }}
             data={data}
             horizontal={false}
             renderItem={({ item, index }) => renderItem(item, index)}

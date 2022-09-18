@@ -1,5 +1,5 @@
 export interface CarsData {
-  _id: string
+  _id?: string
   title: string
   brand: string
   price: string

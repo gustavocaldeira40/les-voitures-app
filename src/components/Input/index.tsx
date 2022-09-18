@@ -1,5 +1,6 @@
 import React from 'react'
 import { TextInput, TextInputProps, View } from 'react-native'
+import CurrencyInput from 'react-native-currency-input'
 import { Colors } from '../../styles/colors'
 import {
   Container,
@@ -14,6 +15,7 @@ interface InputProps extends TextInputProps {
   noradius?: boolean
   errorMessage?: string
   placeholder?: string
+  marginTop?: string
 }
 
 const Input: React.FC<InputProps> = ({
@@ -22,11 +24,13 @@ const Input: React.FC<InputProps> = ({
   noradius,
   errorMessage,
   placeholder,
+  marginTop,
+
   ...props
 }) => {
   return (
     <Container>
-      <ContainerInput>
+      <ContainerInput marginTop={marginTop}>
         <TextInputPersonalized
           selectionColor={Colors.secondary}
           placeholder={placeholder}

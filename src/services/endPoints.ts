@@ -12,8 +12,14 @@ export class EndPoints {
     return data
   }
 
+  static createCar = async (values: CarsData) => {
+    const { data } = await api.post('cars', values)
+    console.log('DATA CREEATE CAR', data)
+    return data
+  }
+
   static updateCar = async (id: string, values: CarsData) => {
-    const { data } = await api.put(`cars/${id}`, { data: values })
+    const { data } = await api.put(`cars/${id}`, values)
     return data
   }
 
