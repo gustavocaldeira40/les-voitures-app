@@ -6,9 +6,7 @@
 
 This project is divided into Three parts:
 
-1. Front-end Mobile
-2. Back-end
-3. Panel-Admin
+<b> Front-end Mobile </b>
 
 ### Prerequisites
 
