@@ -13,7 +13,7 @@ export const Container = styled(Animated.View)`
 
 export const TextTitle = styled.Text<any>`
   font-family: 'Black';
-  font-size: 25px;
+  font-size: 22px;
   flex: 1;
   margin-left: ${(props) => (props.withRightSide ? '30px' : 0)};
   margin-right: ${(props) => (!props.withRightSide ? '10px' : 0)};
