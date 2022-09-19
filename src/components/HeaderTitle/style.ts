@@ -8,7 +8,7 @@ export const Container = styled.View<any>`
 `
 
 export const TextSubTitle = styled.Text`
-  font-family: 'Light';
+  font-family: 'Bold';
   font-size: 20px;
   color: ${Colors.subTitle};
 `
@@ -16,7 +16,7 @@ export const TextSubTitle = styled.Text`
 export const TextTitle = styled.Text`
   font-family: 'Black';
   font-size: 40px;
-  line-height: 44px;
+  line-height: 43px;
   color: ${Colors.white};
 `
 
