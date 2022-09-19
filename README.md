@@ -21,8 +21,6 @@ $ yarn or npm install
 # Run the application in development mode
 $ yarn start or npx expo start
 
-# The application will open on port:3000 - go to http://localhost:3000
-
 ```
 
 ---
