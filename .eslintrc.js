@@ -1,145 +1,145 @@
 module.exports = {
-    env: {
-        es2021: true,
-        node: true,
-    },
-    extends: [
-        'plugin:react/recommended',
-        'standard-with-typescript',
-        'plugin:prettier/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'prettier',
+  env: {
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
 
-        'plugin:import/recommended',
-        'plugin:import/typescript',
-        'plugin:import/errors',
-        'plugin:import/warnings',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
+  overrides: [],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    'react-hooks',
+    '@typescript-eslint',
+    'import',
+    'unused-imports',
+  ],
+  rules: {
+    'react/jsx-no-constructed-context-values': 'off',
+    'no-unreachable': 'off',
+    'import/no-cycle': 'off',
+    'import/named': 2,
+    'import/namespace': 2,
+    'import/default': 2,
+    'import/export': 2,
+    'import/no-unresolved': 'error',
+    'react-hooks/rules-of-hooks': 'error',
+    'import/no-duplicates': 'error',
+
+    'prettier/prettier': [
+      'off',
+
+      {
+        endOfLine: 'auto',
+      },
     ],
-    overrides: [],
-    parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-    },
-    plugins: [
-        'react',
-        'react-hooks',
-        '@typescript-eslint',
-        'import',
-        'unused-imports',
+    'no-plusplus': 'off',
+    'react/no-unstable-nested-components': 'off',
+    'react/jsx-no-useless-fragment': 'off',
+    'react/style-prop-object': 'off',
+
+    'react/jsx-filename-extension': [
+      'warn',
+
+      {
+        extensions: ['.js', '.jsx', '.tsx', '.ts'],
+      },
     ],
-    rules: {
-        'react/jsx-no-constructed-context-values': 'off',
-        'no-unreachable': 'off',
-        'import/no-cycle': 'off',
-        'import/named': 2,
-        'import/namespace': 2,
-        'import/default': 2,
-        'import/export': 2,
-        'import/no-unresolved': 'error',
-        'react-hooks/rules-of-hooks': 'error',
-        'import/no-duplicates': 'error',
 
-        'prettier/prettier': [
-            'off',
+    'import/prefer-default-export': 'off',
 
-            {
-                endOfLine: 'auto',
-            },
-        ],
-        'no-plusplus': 'off',
-        'react/no-unstable-nested-components': 'off',
-        'react/jsx-no-useless-fragment': 'off',
-        'react/style-prop-object': 'off',
+    'react/state-in-constructor': 'off',
 
-        'react/jsx-filename-extension': [
-            'warn',
+    'react/static-property-placement': 'off',
 
-            {
-                extensions: ['.js', '.jsx', '.tsx', '.ts'],
-            },
-        ],
+    'react/jsx-props-no-spreading': 'off',
 
-        'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
 
-        'react/state-in-constructor': 'off',
+    'react/require-default-props': 'off',
 
-        'react/static-property-placement': 'off',
+    'react/no-array-index-key': 'off',
 
-        'react/jsx-props-no-spreading': 'off',
+    'no-param-reassign': 'off',
 
-        'react/prop-types': 'off',
+    'no-console': 'off',
 
-        'react/require-default-props': 'off',
+    'no-use-before-define': 'off',
 
-        'react/no-array-index-key': 'off',
+    'no-unused-vars': 'off',
 
-        'no-param-reassign': 'off',
+    'global-require': 'off',
 
-        'no-console': 'off',
+    camelcase: 'off',
 
-        'no-use-before-define': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
 
-        'no-unused-vars': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
 
-        'global-require': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
 
-        camelcase: 'off',
+    '@typescript-eslint/no-empty-function': 'off',
 
-        '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
 
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'import/no-extraneous-dependencies': 'off',
 
-        '@typescript-eslint/no-var-requires': 'off',
+    'no-unused-expressions': 'off',
 
-        '@typescript-eslint/no-empty-function': 'off',
+    'no-nested-ternary': 'off',
 
-        '@typescript-eslint/no-explicit-any': 'off',
+    'react/destructuring-assignment': 'off',
 
-        'import/no-extraneous-dependencies': 'off',
+    'import/extensions': [
+      'error',
 
-        'no-unused-expressions': 'off',
+      'ignorePackages',
 
-        'no-nested-ternary': 'off',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
 
-        'react/destructuring-assignment': 'off',
-
-        'import/extensions': [
-            'error',
-
-            'ignorePackages',
-
-            {
-                js: 'never',
-                jsx: 'never',
-                ts: 'never',
-                tsx: 'never',
-            },
-        ],
-
-        'react/function-component-definition': 'off',
-        'consistent-return': 'off',
-        'no-unsafe-optional-chaining': 'off',
-    },
-    settings: {
-        'import/resolver': {
-            node: {
-                typescript: {
-                    alwaysTryTypes: true,
-                },
-                paths: [
-                    'src',
-                    'assets',
-                    'components',
-                    'context',
-                    'interfaces',
-                    'models',
-                    'routes',
-                    'types',
-                    'pages',
-                    'services',
-                ],
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            },
+    'react/function-component-definition': 'off',
+    'consistent-return': 'off',
+    'no-unsafe-optional-chaining': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        typescript: {
+          alwaysTryTypes: true,
         },
+        paths: [
+          'src',
+          'assets',
+          'components',
+          'context',
+          'interfaces',
+          'models',
+          'routes',
+          'types',
+          'pages',
+          'services',
+        ],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
+  },
 }

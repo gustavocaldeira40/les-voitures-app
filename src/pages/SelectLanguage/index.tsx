@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import { Colors } from 'styles/colors'
 import {
   Container,
