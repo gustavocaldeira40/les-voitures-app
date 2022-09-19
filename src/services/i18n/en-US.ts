@@ -42,9 +42,22 @@ export default {
   'Fill in the fields below to add your cars':
     'Fill in the fields below to add your cars.',
   Vehicle: 'Vehicle',
-  Brand: 'Marque',
+  Brand: 'Brand',
   Value: 'Value',
   Save: 'Save',
+
+  // List Cars
+  'List of': 'List of',
+  'Below you can follow the created cars, edit and delete them':
+    'Below you can follow the created cars, edit and delete them.',
+  Price: 'Price',
+  Year: 'Year',
+  Edit: 'Edit',
+  'See More': 'See More',
+  Delete: 'Delete',
+  Close: 'Close',
+  Cancel: 'Cancel',
+  Yes: 'Yes',
 
   // Messages and Validation
   'Error the save the user , Try Again !':
@@ -60,4 +73,11 @@ export default {
   'Car Created Successfully': 'Car Created Successfully!',
   'Error the save the vehicle , Try Again !':
     'Error the save the vehicle , Try Again !',
+  'Error loading datas': 'Error loading datas!',
+  'Vehicle deleted successfully!': 'Vehicle deleted successfully!',
+  'Error when deleting vehicle': 'Error when deleting vehicle',
+  'Are you sure you want to delete this Vehicle?':
+    'Are you sure you want to delete this Vehicle?',
+  'Image for illustrative purposes only':
+    'Image for illustrative purposes only',
 }

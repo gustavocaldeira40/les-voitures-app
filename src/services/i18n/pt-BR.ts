@@ -44,7 +44,19 @@ export default {
   Brand: 'Marca',
   Value: 'Valor',
   Save: 'Salvar',
-  
+  Year: 'Ano',
+  Edit: 'Editar',
+  'See More': 'Ver mais',
+  Delete: 'Apagar',
+  Close: 'Fechar',
+  Cancel: 'Cancelar',
+  Yes: 'Sim',
+
+  // ListCars
+  'List of': 'Lista de',
+  'Below you can follow the created cars, edit and delete them':
+    'Abaixo você pode acompanhar os carros criados editar e apaga-los.',
+
   // Messages and Validation
   'Error the save the user , Try Again !':
     'Erro ao salvar o usuário, tente novamente!',
@@ -59,4 +71,10 @@ export default {
   'Car Created Successfully': 'Carro criado com sucesso!',
   'Error the save the vehicle , Try Again !':
     'Erro ao salvar o veículo, tente novamente!',
+  'Error loading datas': 'Erro ao carregar dados',
+  'Vehicle deleted successfully!': 'Veículo apagado com sucesso !',
+  'Error when deleting vehicle': 'Erro ao Apagar Veículo',
+  'Are you sure you want to delete this Vehicle?':
+    'Tem Certeza que deseja apagar esse Veículo ?',
+  'Image for illustrative purposes only': 'Imagem meramente ilustrativa',
 }

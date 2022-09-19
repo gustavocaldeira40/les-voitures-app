@@ -13,6 +13,7 @@ import AppStorage from '../../services/appStorage'
 import { useNavigation } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
 import { translate } from '../../services/i18n'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const Register: React.FC = () => {
   /*
@@ -92,30 +93,39 @@ const Register: React.FC = () => {
           start={{ x: 0, y: 0 }}
           end={{ x: 0.5, y: 0.4 }}
         />
-        <ContainerTop>
-          {/* <Header /> */}
-          <HeaderTitle
-            title={translate('Cadastral')}
-            subTitle={translate('Information')}
-            description={translate(
-              'Ok, Now for your experience, fill in the field below',
-            )}
-            // hasHeader
-          />
-          <Input
-            passRef={nameFullRef}
-            defaultValue={values.name}
-            onChangeText={handleChange('name')}
-            placeholder={translate('Name')}
-            errorMessage={errors.name}
-            marginTop="20px"
-          />
-        </ContainerTop>
-        <ContainerButton>
-          <Button disabled={!isValid} onPress={handleSubmit}>
-            {translate('Start')}
-          </Button>
-        </ContainerButton>
+        <KeyboardAwareScrollView
+          scrollEnabled
+          bouncesZoom={false}
+          contentContainerStyle={{
+            justifyContent: 'space-evenly',
+            minHeight: '100%',
+            // paddingBottom: 20,
+          }}
+        >
+          <ContainerTop>
+            <HeaderTitle
+              title={translate('Cadastral')}
+              subTitle={translate('Information')}
+              description={translate(
+                'Ok, Now for your experience, fill in the field below',
+              )}
+              // hasHeader
+            />
+            <Input
+              passRef={nameFullRef}
+              defaultValue={values.name}
+              onChangeText={handleChange('name')}
+              placeholder={translate('Name')}
+              errorMessage={errors.name}
+              marginTop="20px"
+            />
+          </ContainerTop>
+          <ContainerButton>
+            <Button disabled={!isValid} onPress={handleSubmit}>
+              {translate('Start')}
+            </Button>
+          </ContainerButton>
+        </KeyboardAwareScrollView>
       </Container>
     </>
   )

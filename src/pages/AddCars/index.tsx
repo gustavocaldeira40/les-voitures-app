@@ -174,7 +174,7 @@ const AddCars: React.FC = () => {
         <KeyboardAwareScrollView
           scrollEnabled
           contentContainerStyle={{
-            justifyContent: 'space-between',
+            justifyContent: 'space-evenly',
             minHeight: '100%',
           }}
         >

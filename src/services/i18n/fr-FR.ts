@@ -42,8 +42,22 @@ export default {
   'Fill in the fields below to add your cars':
     'Remplissez les champs ci-dessous pour ajouter vos voitures.',
   Vehicle: 'Véhicule',
+  Brand: 'Marque',
   Value: 'Évaluer',
   Save: 'Sauver',
+  Price: 'Le prix',
+  Year: 'An',
+  Edit: 'Éditer',
+  'See More': 'Voir plus',
+  Delete: 'Effacer',
+  Close: 'Proche',
+  Cancel: 'Annuler',
+  Yes: 'Ouais',
+
+  // ListCars
+  'List of': 'Liste de',
+  'Below you can follow the created cars, edit and delete them':
+    'Ci-dessous, vous pouvez suivre les voitures créées, les modifier et les supprimer.',
 
   // Messages and Validation
   'Error the save the user , Try Again !':
@@ -59,4 +73,10 @@ export default {
   'Car Created Successfully': 'Voiture créée avec succès!',
   'Error the save the vehicle , Try Again !':
     'Erreur lors de la sauvegarde du véhicule, réessayez !',
+  'Error loading datas': 'Erreur lors du chargement des dates',
+  'Vehicle deleted successfully!': 'Véhicule supprimé avec succès !',
+  'Error when deleting vehicle': 'Erreur lors de la suppression du véhicule',
+  'Are you sure you want to delete this Vehicle?':
+    'Voulez-vous vraiment supprimer ce véhicule ?',
+  'Image for illustrative purposes only': 'Image à titre indicatif seulement',
 }

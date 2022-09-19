@@ -13,6 +13,7 @@ import {
   TextContent,
   TouchableCancel,
 } from './style'
+import { translate } from '../../services/i18n'
 
 interface ModalProps {
   visible: boolean
@@ -52,7 +53,7 @@ const ModalDefault: React.FC<ModalProps> = ({
             hitSlop={{ bottom: 20, left: 20, right: 20, top: 20 }}
             onPress={() => handleClose()}
           >
-            <TextClose>fechar</TextClose>
+            <TextClose>{translate('Close')}</TextClose>
           </TouchableOpacity>
         </ContainerClose>
         <ContainerMessage>
@@ -60,7 +61,7 @@ const ModalDefault: React.FC<ModalProps> = ({
         </ContainerMessage>
         <ContainerButtons>
           <TouchableCancel onPress={() => handleClose()}>
-            <TextCancel>{textCancelButton || 'Cancelar'}</TextCancel>
+            <TextCancel>{textCancelButton || translate('Cancel')}</TextCancel>
           </TouchableCancel>
           <Button
             secondary
@@ -68,7 +69,7 @@ const ModalDefault: React.FC<ModalProps> = ({
             height="34px"
             onPress={() => handleOk()}
           >
-            Sim
+            {translate('Yes')}
           </Button>
         </ContainerButtons>
       </Content>

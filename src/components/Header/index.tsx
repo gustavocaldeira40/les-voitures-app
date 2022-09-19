@@ -16,6 +16,7 @@ import {
 } from './style'
 import { useNavigation } from '@react-navigation/native'
 import { Colors } from '../../styles/colors'
+import { translate } from '../../services/i18n'
 
 interface HeaderProps {
   withoutLeftSide?: boolean
@@ -110,7 +111,9 @@ const Header: React.FC<HeaderProps> = ({
 
       {showInformation && (
         <ContainerInformation style={{ opacity: fadeAnim }}>
-          <TextInformation>Imagem meramente ilustrativa</TextInformation>
+          <TextInformation>
+            {translate('Image for illustrative purposes only')}
+          </TextInformation>
         </ContainerInformation>
       )}
     </Container>

@@ -20,7 +20,7 @@ import { showMessage } from 'react-native-flash-message'
 import CarExample from '../../assets/images/car-example.png'
 import ActionSeeMore from '../../components/ActionSeeMore'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import Loading from '../../components/Loading'
+import { translate } from '../../services/i18n'
 
 type DescriptionData = {
   title: string
@@ -69,15 +69,15 @@ const SeeMore: React.FC = () => {
         setItem(data)
 
         setDescription([
-          { title: 'Brand', description: data.title },
-          { title: 'Price', description: data.price },
-          { title: 'Age', description: data.age },
+          { title: translate('Brand'), description: data.title },
+          { title: translate('Price'), description: data.price },
+          { title: translate('Year'), description: data.age },
         ])
       }
     } catch (error) {
       console.log('ERROR THE LOADING DATA')
       showMessage({
-        message: 'Error the loading data',
+        message: translate('Error loading datas'),
         type: 'danger',
       })
     } finally {

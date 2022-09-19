@@ -12,7 +12,7 @@ import Card from '../../components/Card'
 import NoItem from '../../components/NoItem'
 import HeaderFloating from '../../components/HeaderFloating'
 import { useNavigation, useRoute } from '@react-navigation/native'
-import { ListCarsReloadData } from '../../types/list-cars-reload'
+import { translate } from '../../services/i18n'
 
 const ListCars: React.FC = () => {
   /*
@@ -59,7 +59,7 @@ const ListCars: React.FC = () => {
     } catch (error) {
       console.log('ERROR THE LOADING DATA')
       showMessage({
-        message: 'Error loading data',
+        message: translate('Error loading datas'),
         type: 'danger',
       })
     } finally {
@@ -80,7 +80,7 @@ const ListCars: React.FC = () => {
 
         if (data) {
           showMessage({
-            message: 'Veículo apagado com sucesso !',
+            message: translate('Vehicle deleted successfully!'),
             type: 'success',
             duration: 3000,
           })
@@ -90,7 +90,7 @@ const ListCars: React.FC = () => {
     } catch (error) {
       console.log('ERROR THE DELETE', error)
       showMessage({
-        message: 'Erro ao Apagar Veículo',
+        message: translate('Error when deleting vehicle'),
         type: 'danger',
       })
     } finally {
@@ -150,9 +150,11 @@ const ListCars: React.FC = () => {
             keyExtractor={(item) => String(item?._id)}
             ListHeaderComponent={
               <HeaderTitle
-                title="Carros"
-                subTitle="Lista de"
-                description="Abaixo você pode acompanhar os carros criados e compra-los também."
+                title={translate('Cars')}
+                subTitle={translate('List of')}
+                description={translate(
+                  'Below you can follow the created cars, edit and delete them',
+                )}
                 hasHeader={false}
                 style={{ marginBottom: 20 }}
               />
@@ -176,7 +178,6 @@ const ListCars: React.FC = () => {
         ) : (
           <NoItem />
         )}
-        {/* </ScrollView> */}
       </Container>
     </>
   )

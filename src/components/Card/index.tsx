@@ -20,6 +20,7 @@ import ModalDefault from '../../components/Modal'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { Animated, TouchableWithoutFeedback } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { translate } from '../../services/i18n'
 
 interface CardProps {
   item: CarsData
@@ -103,10 +104,10 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
   return (
     <>
       <ModalDefault
-        message="Tem Certeza que deseja apagar esse Veículo ?"
+        message={translate('Are you sure you want to delete this Vehicle?')}
         visible={showModalDelete}
         handleClose={() => setShowModalDelete(false)}
-        handleOk={() => {}}
+        handleOk={() => changeRemoveCar(item)}
       />
       <TouchableWithoutFeedback
         onPress={() => {
@@ -130,15 +131,15 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
 
           <ContainerDescription>
             <ContainerItem>
-              <TextDescription>Marca: </TextDescription>
+              <TextDescription>{translate('Brand')}: </TextDescription>
               <TextDescription isDescription>{item?.brand}</TextDescription>
             </ContainerItem>
             <ContainerItem>
-              <TextDescription>Price: </TextDescription>
+              <TextDescription>{translate('Price')}: </TextDescription>
               <TextDescription isDescription>{item?.price}</TextDescription>
             </ContainerItem>
             <ContainerItem>
-              <TextDescription>Age: </TextDescription>
+              <TextDescription>{translate('Year')}: </TextDescription>
               <TextDescription isDescription>{item?.age}</TextDescription>
             </ContainerItem>
           </ContainerDescription>
@@ -152,7 +153,7 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
                 handleEdit(item)
               }}
             >
-              Editar
+              {translate('Edit')}
             </Button>
             <ContainerDots onPress={() => changeShowMenu()}>
               <Dots name="dots" color={Colors.icon} size={15} />
@@ -162,15 +163,15 @@ const Card: React.FC<CardProps> = ({ item, changeRemoveCar }) => {
               <ContainerMenu style={{ opacity: fadeAnim }}>
                 <ContainerItemMenu onPress={() => handleSeeMore(item)}>
                   <FontAwesome5 name="eye" size={15} color={Colors.icon} />
-                  <TextMenu>Ver mais</TextMenu>
+                  <TextMenu>{translate('See More')}</TextMenu>
                 </ContainerItemMenu>
-                <ContainerItemMenu onPress={() => changeRemoveCar(item)}>
+                <ContainerItemMenu onPress={() => setShowModalDelete(true)}>
                   <FontAwesome5
                     name="trash"
                     size={15}
                     color={Colors.secondary}
                   />
-                  <TextMenu>Apagar</TextMenu>
+                  <TextMenu>{translate('Delete')}</TextMenu>
                 </ContainerItemMenu>
               </ContainerMenu>
             )}

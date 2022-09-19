@@ -7,7 +7,7 @@ import { Colors } from '../../styles/colors'
 export const Container = styled.View`
   flex: 1;
   position: relative;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 `
 
 export const ContainerTop = styled.View`
