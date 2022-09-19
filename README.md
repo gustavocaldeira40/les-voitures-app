@@ -1,6 +1,4 @@
-<h1 align="center">Les'Voitures-App </h1>
-<img src="./src/assets/visual/icon.png" alt="Icon of Application" style="width: 100px;height:100px" />
-
+<h1 align="center">Les'Voitures-App</h1>
 <p align="center">Front-end of Les'Voitures application developed in React-Native with Typescript</p>
 <p>A cross-platform application to create, edit and delete user-created cars.</p>
 
