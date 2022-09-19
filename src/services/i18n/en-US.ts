@@ -29,9 +29,35 @@ export default {
   'Car List': 'Car List',
   More: 'More',
 
+  // More Screen
+  Datas: 'Datas',
+  'Here you can change your personal data':
+    'Here you can change your personal data.',
+  'Here you can Change your default language':
+    'Here you can Change your default language.',
+
+  // AddCars
+  Cars: 'Cars',
+  Add: 'Add',
+  'Fill in the fields below to add your cars':
+    'Fill in the fields below to add your cars.',
+  Vehicle: 'Vehicle',
+  Brand: 'Marque',
+  Value: 'Value',
+  Save: 'Save',
+
   // Messages and Validation
   'Error the save the user , Try Again !':
     'Error the save the user , Try Again !',
   'Inform the your name': 'Inform the your name',
   Loading: 'Loading',
+  'Enter the name/title of the vehicle': 'Enter the name/title of the vehicle',
+  'Inform the make of the vehicle': 'Inform the make of the vehicle',
+  'Enter the value of the vehicle': 'Enter the value of the vehicle',
+  'Inform the year of the vehicle': 'Inform the year of the vehicle',
+  'The year entered is not valid': 'The year entered is not valid!',
+  'Car Edited Successfully': 'Car Edited Successfully!',
+  'Car Created Successfully': 'Car Created Successfully!',
+  'Error the save the vehicle , Try Again !':
+    'Error the save the vehicle , Try Again !',
 }

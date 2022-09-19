@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Animated, Easing } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import LogoImage from '../../assets/visual/icon-write.png'
@@ -13,12 +13,13 @@ import { Colors } from '../../styles/colors'
 import Loading from '../../components/Loading'
 import AppStorage from '../../services/appStorage'
 import { useNavigation } from '@react-navigation/native'
-import { setLanguageToI18n } from '../../services/i18n'
+import { DataContext } from '../../context/appContext'
 
 const RedirectScreen: React.FC = () => {
   /*
    *   CONTEXT
    */
+  const { removeAllKeys } = useContext(DataContext)
 
   /*
    *   REFS
@@ -46,15 +47,10 @@ const RedirectScreen: React.FC = () => {
   /*
    *   FUNCTIONS
    */
+
   const loadData = async () => {
     const language = await AppStorage.getData('@lesVoitures:language')
     const user = await AppStorage.getData('@lesVoitures:userName')
-
-    console.log('LANGUAGE', language)
-
-    if (language) {
-      setLanguageToI18n(language)
-    }
 
     if (!language) {
       navigation.reset({
@@ -74,17 +70,12 @@ const RedirectScreen: React.FC = () => {
     }
   }
 
-  const removeKeys = async () => {
-    await AppStorage.remove('@lesVoitures:language')
-    await AppStorage.remove('@lesVoitures:userName')
-  }
-
   /*
    *   EFFECTS
    */
 
   // useEffect(() => {
-  //   removeKeys()
+  //   removeAllKeys()
   // }, [])
 
   useEffect(() => {

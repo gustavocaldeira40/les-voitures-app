@@ -13,6 +13,7 @@ import { FontAwesome } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { Colors } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
+import { translate } from '../../services/i18n'
 
 const More: React.FC = () => {
   /*
@@ -61,9 +62,9 @@ const More: React.FC = () => {
           <FontAwesome name="globe" size={25} color={`${Colors.icon}88`} />
         </ContainerIcon>
         <ContainerTitle>
-          <TextTitle>Idioma</TextTitle>
+          <TextTitle>{translate('Language')}</TextTitle>
           <TextDescription>
-            Aqui voce pode Alterar seu idioma padrão.
+            {translate('Here you can Change your default language')}
           </TextDescription>
         </ContainerTitle>
       </TouchableItem>
@@ -81,9 +82,9 @@ const More: React.FC = () => {
           />
         </ContainerIcon>
         <ContainerTitle>
-          <TextTitle>Dados</TextTitle>
+          <TextTitle>{translate('Datas')}</TextTitle>
           <TextDescription>
-            Aqui você pode alterar seus dados pessoais.
+            {translate('Here you can change your personal data')}
           </TextDescription>
         </ContainerTitle>
       </TouchableItem>

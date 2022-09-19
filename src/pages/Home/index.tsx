@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import HeaderTitle from '../../components/HeaderTitle'
 import { StatusBar } from 'expo-status-bar'
 import { Colors } from '../../styles/colors'
@@ -11,11 +11,13 @@ import { Feather } from '@expo/vector-icons'
 import Octicons from 'react-native-vector-icons/Octicons'
 import { useNavigation } from '@react-navigation/native'
 import { translate } from '../../services/i18n'
+import { DataContext } from '../../context/appContext'
 
 const Home: React.FC = () => {
   /*
    *   CONTEXT
    */
+  const { user, getUser } = useContext(DataContext)
 
   /*
    *   REFS
@@ -24,7 +26,6 @@ const Home: React.FC = () => {
   /*
    *   STATES
    */
-  const [userName, setUserName] = useState(null as any)
 
   /*
    *   HOOKS
@@ -42,13 +43,6 @@ const Home: React.FC = () => {
   /*
    *   FUNCTIONS
    */
-  const getUser = async () => {
-    const user = await AppStorage.getData('@lesVoitures:userName')
-
-    if (user) {
-      setUserName(user)
-    }
-  }
 
   /*
    *   EFFECTS
@@ -73,7 +67,7 @@ const Home: React.FC = () => {
           end={{ x: 0.5, y: 0.4 }}
         />
 
-        <Header title={`${translate('Hi')}, ${userName}`} withoutLeftSide />
+        <Header title={`${translate('Hi')}, ${user}`} withoutLeftSide />
 
         <HeaderTitle
           title={translate('Les’Voitures')}

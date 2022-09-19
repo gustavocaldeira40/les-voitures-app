@@ -28,8 +28,35 @@ export default {
   'Car List': 'Liste des voitures',
   More: 'Suite',
 
+  // More Screen
+
+  Datas: 'Des données',
+  'Here you can change your personal data':
+    'Ici, vous pouvez modifier vos données personnelles.',
+  'Here you can Change your default language':
+    'Ici, vous pouvez changer votre langue par défaut',
+
+  // AddCars
+  Cars: 'Voitures',
+  Add: 'Ajouter',
+  'Fill in the fields below to add your cars':
+    'Remplissez les champs ci-dessous pour ajouter vos voitures.',
+  Vehicle: 'Véhicule',
+  Value: 'Évaluer',
+  Save: 'Sauver',
+
   // Messages and Validation
   'Error the save the user , Try Again !':
     "Erreur lors de la sauvegarde de l'utilisateur, réessayez !",
   'Inform the your name': 'Informez votre nom',
+
+  'Enter the name/title of the vehicle': 'Saisir le nom/titre du véhicule',
+  'Inform the make of the vehicle': 'Informer la marque du véhicule',
+  'Enter the value of the vehicle': 'Saisir la valeur du véhicule',
+  'Inform the year of the vehicle': "Informer l'année du véhicule",
+  'The year entered is not valid': "L'année saisie n'est pas valide!",
+  'Car Edited Successfully': 'Voiture éditée avec succès!',
+  'Car Created Successfully': 'Voiture créée avec succès!',
+  'Error the save the vehicle , Try Again !':
+    'Erreur lors de la sauvegarde du véhicule, réessayez !',
 }

@@ -68,19 +68,6 @@ const SelectLanguage: React.FC = () => {
       index: 0,
       routes: [{ name: 'Redirect' }],
     })
-    // if (params !== undefined) {
-    //   console.log('PARAMS', params)
-
-    //   const { moreScreen } = params as MoreScreenData
-    //   if (moreScreen) {
-    //     navigation.reset({
-    //       index: 0,
-    //       routes: [{ name: 'Redirect' }],
-    //     })
-    //   }
-    // } else {
-    //   navigation.navigate('Register')
-    // }
   }
 
   /*

@@ -23,6 +23,7 @@ import { EndPoints } from '../../services/endPoints'
 import moment from 'moment'
 import { ParamsData } from '../../types/params'
 import LoadingSpinner from '../../components/LoadingSpinner'
+import { translate } from '../../services/i18n'
 
 const AddCars: React.FC = () => {
   /*
@@ -74,10 +75,12 @@ const AddCars: React.FC = () => {
     },
     enableReinitialize: true,
     validationSchema: yup.object().shape({
-      title: yup.string().required('Inform the title'),
-      brand: yup.string().required('Inform the brand'),
-      price: yup.string().required('Inform the price'),
-      age: yup.string().required('Inform the age'),
+      title: yup
+        .string()
+        .required(translate('Enter the name/title of the vehicle')),
+      brand: yup.string().required(translate('Inform the make of the vehicle')),
+      price: yup.string().required(translate('Enter the value of the vehicle')),
+      age: yup.string().required(translate('Inform the year of the vehicle')),
     }),
     onSubmit: async (_values, set) => {
       setLoading(true)
@@ -86,7 +89,7 @@ const AddCars: React.FC = () => {
         const isFuture = moment(values?.age)?.isAfter(actuallyDate)
 
         if (isFuture) {
-          errors.age = 'O Ano não é valido'
+          errors.age = translate('The year entered is not valid')
           return
         }
 
@@ -99,14 +102,13 @@ const AddCars: React.FC = () => {
 
         if (params !== undefined) {
           const data = await EndPoints.updateCar(values?._id, formData)
-          console.log('ATUALIZOU', data)
 
           if (data) {
             resetForm()
             navigation.navigate('ListCars', { reload: true })
 
             showMessage({
-              message: 'Car Edited Successfully',
+              message: translate('Car Edited Successfully'),
               type: 'success',
             })
           }
@@ -119,13 +121,16 @@ const AddCars: React.FC = () => {
         if (data) {
           resetForm()
 
-          showMessage({ message: 'Car Created Successfully', type: 'success' })
+          showMessage({
+            message: translate('Car Created Successfully'),
+            type: 'success',
+          })
         }
       } catch (error) {
         console.log('ERROR THE SAVE', error)
 
         showMessage({
-          message: 'Error the save the user , Try Again !',
+          message: translate('Error the save the vehicle , Try Again !'),
           type: 'danger',
         })
       } finally {
@@ -137,20 +142,22 @@ const AddCars: React.FC = () => {
   /*
    *   FUNCTIONS
    */
-  const setFields = () => {}
+  const setFields = () => {
+    const { _id, title, brand, price, age } = (params as ParamsData)?.item
+
+    setFieldValue('_id', _id)
+    setFieldValue('title', title)
+    setFieldValue('brand', brand)
+    setFieldValue('price', price)
+    setFieldValue('age', age)
+  }
 
   /*
    *   EFFECTS
    */
   useEffect(() => {
     if (params !== undefined) {
-      const { _id, title, brand, price, age } = (params as ParamsData)?.item
-
-      setFieldValue('_id', _id)
-      setFieldValue('title', title)
-      setFieldValue('brand', brand)
-      setFieldValue('price', price)
-      setFieldValue('age', age)
+      setFields()
     }
   }, [params])
 
@@ -174,9 +181,11 @@ const AddCars: React.FC = () => {
           <ContainerTop>
             <Header />
             <HeaderTitle
-              title="Carros"
-              subTitle="Adicionar"
-              description="Preencha os campos abaixo para adicionar seus carros."
+              title={translate('Cars')}
+              subTitle={translate('Add')}
+              description={translate(
+                'Fill in the fields below to add your cars',
+              )}
               hasHeader
             />
             <ContainerInputs>
@@ -184,7 +193,7 @@ const AddCars: React.FC = () => {
                 passRef={titleRef}
                 defaultValue={values.title}
                 onChangeText={handleChange('title')}
-                placeholder="Veículo"
+                placeholder={translate('Vehicle')}
                 errorMessage={errors.title}
                 onSubmitEditing={() => (brandRef as any).current.focus()}
               />
@@ -192,7 +201,7 @@ const AddCars: React.FC = () => {
                 passRef={brandRef}
                 defaultValue={values.brand}
                 onChangeText={handleChange('brand')}
-                placeholder="Marca"
+                placeholder={translate('Brand')}
                 errorMessage={errors.brand}
                 onSubmitEditing={() => (priceRef as any).current.focus()}
               />
@@ -202,7 +211,7 @@ const AddCars: React.FC = () => {
                 onChangeText={(value) => {
                   setFieldValue('price', value)
                 }}
-                placeholder="Valor"
+                placeholder={translate('Value')}
                 errorMessage={errors.price}
                 isCurrency
                 onSubmitEditing={() => (ageRef as any).current.focus()}
@@ -222,7 +231,7 @@ const AddCars: React.FC = () => {
           </ContainerTop>
           <ContainerButton>
             <Button disabled={!isValid} onPress={handleSubmit}>
-              Salvar
+              {translate('Save')}
             </Button>
           </ContainerButton>
         </KeyboardAwareScrollView>
