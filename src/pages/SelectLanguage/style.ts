@@ -1,7 +1,6 @@
-import { Metrics } from './../../styles/metricts'
+import { Metrics } from 'styles/metricts'
 import { LinearGradient } from 'expo-linear-gradient'
 import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
 
 export const Container = styled.View`
   flex: 1;

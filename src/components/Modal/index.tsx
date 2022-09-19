@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../components/Button'
+import Button from 'components/Button'
 import { Dimensions, TouchableOpacity } from 'react-native'
 
 import Modal from 'react-native-modal'
@@ -13,7 +13,7 @@ import {
   TextContent,
   TouchableCancel,
 } from './style'
-import { translate } from '../../services/i18n'
+import { translate } from 'services/i18n'
 
 interface ModalProps {
   visible: boolean

@@ -1,5 +1,5 @@
 import React from 'react'
-import { translate } from '../../services/i18n'
+import { translate } from 'services/i18n'
 import { Container, ContainerTexts, TextDescription } from './style'
 
 interface ActionSeeMoreProps {

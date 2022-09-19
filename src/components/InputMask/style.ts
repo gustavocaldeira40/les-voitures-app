@@ -1,6 +1,6 @@
 import MaskInput from 'react-native-mask-input'
 import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 
 export const Container = styled.View`
   margin: 10px;

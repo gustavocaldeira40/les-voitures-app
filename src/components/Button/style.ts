@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { Colors } from './../../styles/colors'
+import { Colors } from 'styles/colors'
 
 export const Touchable = styled.TouchableOpacity<any>`
   width: ${(props) => (props.width ? props.width : '50%')};

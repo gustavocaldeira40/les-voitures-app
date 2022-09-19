@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/Header'
+import Header from 'components/Header'
 import {
   Container,
   ContainerIcon,
@@ -11,9 +11,9 @@ import {
 } from './style'
 import { FontAwesome } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import { useNavigation } from '@react-navigation/native'
-import { translate } from '../../services/i18n'
+import { translate } from 'services/i18n'
 
 const More: React.FC = () => {
   /*

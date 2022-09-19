@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 import { LinearGradient } from 'expo-linear-gradient'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import { Animated } from 'react-native'
 
 export const Container = styled.View`

@@ -1,6 +1,6 @@
-import { statusBarHeight } from '../../styles/metricts'
 import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
+import { statusBarHeight } from 'styles/metricts'
+import { Colors } from 'styles/colors'
 import { Animated } from 'react-native'
 
 export const Container = styled(Animated.View)`

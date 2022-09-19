@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { FlatList, RefreshControl, ScrollView, Animated } from 'react-native'
 
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import { Container, MainOverlay } from './style'
-import HeaderTitle from '../../components/HeaderTitle'
-import { EndPoints } from '../../services/endPoints'
-import { CarsData } from '../../models/cars'
+import HeaderTitle from 'components/HeaderTitle'
+import { EndPoints } from 'services/endPoints'
+import { CarsData } from 'models/cars'
 import { showMessage } from 'react-native-flash-message'
-import LoadingSpinner from '../../components/LoadingSpinner'
-import Card from '../../components/Card'
-import NoItem from '../../components/NoItem'
-import HeaderFloating from '../../components/HeaderFloating'
+import LoadingSpinner from 'components/LoadingSpinner'
+import Card from 'components/Card'
+import NoItem from 'components/NoItem'
+import HeaderFloating from 'components/HeaderFloating'
 import { useNavigation, useRoute } from '@react-navigation/native'
-import { translate } from '../../services/i18n'
+import { translate } from 'services/i18n'
 
 const ListCars: React.FC = () => {
   /*

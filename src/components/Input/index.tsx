@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextInput, TextInputProps, View } from 'react-native'
 import CurrencyInput from 'react-native-currency-input'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import {
   Container,
   ContainerInput,

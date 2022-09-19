@@ -1,8 +1,7 @@
 import React from 'react'
-import { View } from 'react-native'
 import { Container, ContainerInput, InputMaskStyled, TextError } from './style'
-import MaskInput, { Masks, MaskInputProps } from 'react-native-mask-input'
-import { Colors } from '../../styles/colors'
+import { Masks, MaskInputProps } from 'react-native-mask-input'
+import { Colors } from 'styles/colors'
 
 interface InputMaskProps extends MaskInputProps {
   passRef?: any

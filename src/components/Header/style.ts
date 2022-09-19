@@ -1,6 +1,6 @@
-import { height, Metrics, statusBarHeight } from './../../styles/metricts'
+import { height, Metrics, statusBarHeight } from 'styles/metricts'
 import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import { Animated } from 'react-native'
 
 export const Container = styled(Animated.View)`
@@ -8,6 +8,7 @@ export const Container = styled(Animated.View)`
   align-items: center;
   flex-direction: row;
   position: relative;
+  z-index: 5;
 `
 
 export const TextTitle = styled.Text<any>`

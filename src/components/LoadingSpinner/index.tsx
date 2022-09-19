@@ -1,8 +1,7 @@
 import React from 'react'
-import { View } from 'react-native'
 import Spinner from 'react-native-loading-spinner-overlay/lib'
-import { translate } from '../../services/i18n'
-import { Colors } from '../../styles/colors'
+import { translate } from 'services/i18n'
+import { Colors } from 'styles/colors'
 
 interface LoadingSpinnerProps {
   show: boolean

@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react'
-import { setLanguageToI18n } from '../services/i18n'
-import AppStorage from '../services/appStorage'
+import { setLanguageToI18n } from 'services/i18n'
+import AppStorage from 'services/appStorage'
 
 interface DataContextProps {
   removeAllKeys: () => Promise<void>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderTitleProps } from '../../interfaces/header-title'
+import { HeaderTitleProps } from 'interfaces/header-title'
 import { Container, TextDescription, TextSubTitle, TextTitle } from './style'
 
 const HeaderTitle: React.FC<HeaderTitleProps> = ({

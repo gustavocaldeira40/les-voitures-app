@@ -10,7 +10,7 @@ import { SimpleLineIcons } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
 import { Container, TextTitle } from './style'
 import { useNavigation } from '@react-navigation/native'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 
 interface HeaderFloatingProps {
   withoutLeftSide?: boolean

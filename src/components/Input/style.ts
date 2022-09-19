@@ -1,8 +1,7 @@
-import CurrencyInput from 'react-native-currency-input'
+import styled from 'styled-components/native'
 import { TextInput } from 'react-native'
 
-import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 
 export const Container = styled.View`
   margin: 10px;

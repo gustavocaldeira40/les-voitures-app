@@ -18,14 +18,14 @@
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@interfaces": ["./src/interfaces/*"],
+      "@models": ["./src/models/*"],
       "@images/*": ["./src/assets/images/*"],
       "@visual/*": ["./src/assets/visual*"],
       "@pages/*": ["./src/pages/*"],
       "@routes/*": ["./src/routes/*"],
       "@services/*": ["./src/services/*"],
       "@styles/*": ["./src/styles/*"],
-      "@types/*": ["./src/types/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@types/*": ["./src/types/*"]
     }
   },
   "include": ["./src/**/*"],

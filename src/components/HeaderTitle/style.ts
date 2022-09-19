@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
-import { Metrics } from './../../styles/metricts'
-import { Colors } from '../../styles/colors'
+import { Metrics } from 'styles/metricts'
+import { Colors } from 'styles/colors'
 
 export const Container = styled.View<any>`
   padding: ${(props) =>

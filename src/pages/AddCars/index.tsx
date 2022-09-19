@@ -1,9 +1,9 @@
 import { useFormik } from 'formik'
 import React, { useEffect, useRef, useState } from 'react'
-import Header from '../../components/Header'
-import HeaderTitle from '../../components/HeaderTitle'
+import Header from 'components/Header'
+import HeaderTitle from 'components/HeaderTitle'
 
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import {
   Container,
   ContainerButton,
@@ -14,16 +14,16 @@ import {
 import * as yup from 'yup'
 import { showMessage } from 'react-native-flash-message'
 import { useNavigation, useRoute } from '@react-navigation/native'
-import Input from '../../components/Input'
+import Input from 'components/Input'
 
-import Button from '../../components/Button'
+import Button from 'components/Button'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import InputMask from '../../components/InputMask'
-import { EndPoints } from '../../services/endPoints'
+import InputMask from 'components/InputMask'
+import { EndPoints } from 'services/endPoints'
 import moment from 'moment'
-import { ParamsData } from '../../types/params'
-import LoadingSpinner from '../../components/LoadingSpinner'
-import { translate } from '../../services/i18n'
+import { ParamsData } from 'types/params'
+import LoadingSpinner from 'components/LoadingSpinner'
+import { translate } from 'services/i18n'
 
 const AddCars: React.FC = () => {
   /*

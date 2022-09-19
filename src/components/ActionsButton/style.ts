@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 
 export const Touchable = styled.TouchableOpacity`
   background: rgba(255, 255, 255, 0.1);

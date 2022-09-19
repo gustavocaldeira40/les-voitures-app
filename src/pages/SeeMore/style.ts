@@ -16,7 +16,7 @@ export const MainOverlay = styled(LinearGradient)`
 
 export const ContainerArea = styled.View`
   justify-content: center;
-  z-index: 20;
+  z-index: 2;
   align-items: center;
 `
 

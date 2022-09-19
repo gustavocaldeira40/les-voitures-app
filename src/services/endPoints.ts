@@ -1,4 +1,4 @@
-import { CarsData } from '../models/cars'
+import { CarsData } from 'models/cars'
 import api from './api'
 
 export class EndPoints {
@@ -14,7 +14,6 @@ export class EndPoints {
 
   static createCar = async (values: CarsData) => {
     const { data } = await api.post('cars', values)
-    console.log('DATA CREEATE CAR', data)
     return data
   }
 

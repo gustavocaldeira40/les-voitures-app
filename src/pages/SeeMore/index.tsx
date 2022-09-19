@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useRoute } from '@react-navigation/native'
-import { EndPoints } from '../../services/endPoints'
-import { SeeMoreData } from '../../types/see-more'
-import Header from '../../components/Header'
-import { Colors } from '../../styles/colors'
+import { EndPoints } from 'services/endPoints'
+import { SeeMoreData } from 'types/see-more'
+import Header from 'components/Header'
+import { Colors } from 'styles/colors'
 import {
   Container,
   ContainerArea,
@@ -14,13 +14,13 @@ import {
   MainOverlay,
   OverlaySquare,
 } from './style'
-import { CarsData } from '../../models/cars'
+import { CarsData } from 'models/cars'
 import { showMessage } from 'react-native-flash-message'
 
-import CarExample from '../../assets/images/car-example.png'
-import ActionSeeMore from '../../components/ActionSeeMore'
-import LoadingSpinner from '../../components/LoadingSpinner'
-import { translate } from '../../services/i18n'
+import CarExample from 'assets/images/car-example.png'
+import ActionSeeMore from 'components/ActionSeeMore'
+import LoadingSpinner from 'components/LoadingSpinner'
+import { translate } from 'services/i18n'
 
 type DescriptionData = {
   title: string

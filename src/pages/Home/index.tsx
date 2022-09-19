@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
-import HeaderTitle from '../../components/HeaderTitle'
+import HeaderTitle from 'components/HeaderTitle'
 import { StatusBar } from 'expo-status-bar'
-import { Colors } from '../../styles/colors'
+import { Colors } from 'styles/colors'
 import { Container, ContainerAction, MainOverlay } from './style'
-import Header from '../../components/Header'
-import AppStorage from '../../services/appStorage'
-import ActionsButton from '../../components/ActionsButton'
+import Header from 'components/Header'
+import ActionsButton from 'components/ActionsButton'
 import { AntDesign } from '@expo/vector-icons'
 import { Feather } from '@expo/vector-icons'
 import Octicons from 'react-native-vector-icons/Octicons'
 import { useNavigation } from '@react-navigation/native'
-import { translate } from '../../services/i18n'
-import { DataContext } from '../../context/appContext'
+import { translate } from 'services/i18n'
+import { DataContext } from 'context/appContext'
 
 const Home: React.FC = () => {
   /*

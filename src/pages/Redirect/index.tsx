@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { Animated, Easing } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import LogoImage from '../../assets/visual/icon-write.png'
+import LogoImage from 'assets/visual/icon-write.png'
 import {
   Container,
   ContainerLoading,
@@ -9,11 +9,11 @@ import {
   Logo,
   MainOverlay,
 } from './style'
-import { Colors } from '../../styles/colors'
-import Loading from '../../components/Loading'
-import AppStorage from '../../services/appStorage'
+import { Colors } from 'styles/colors'
+import Loading from 'components/Loading'
+import AppStorage from 'services/appStorage'
 import { useNavigation } from '@react-navigation/native'
-import { DataContext } from '../../context/appContext'
+import { DataContext } from 'context/appContext'
 
 const RedirectScreen: React.FC = () => {
   /*

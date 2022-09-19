@@ -1,10 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import {
-  Animated,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native'
+import { Animated, TouchableOpacity } from 'react-native'
 import { SimpleLineIcons } from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons'
 import {
@@ -15,8 +10,8 @@ import {
   TextTitle,
 } from './style'
 import { useNavigation } from '@react-navigation/native'
-import { Colors } from '../../styles/colors'
-import { translate } from '../../services/i18n'
+import { Colors } from 'styles/colors'
+import { translate } from 'services/i18n'
 
 interface HeaderProps {
   withoutLeftSide?: boolean

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { Metrics } from '../../styles/metricts'
+import { Metrics } from 'styles/metricts'
 
 export const Container = styled.TouchableOpacity<any>`
   background: ${(props) =>

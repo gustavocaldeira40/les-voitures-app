@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { Dots } from '../../components/Icon'
-import Button from '../../components/Button'
-import { CarsData } from '../../models/cars'
+import React, { useRef, useState } from 'react'
+import { Dots } from 'components/Icon'
+import Button from 'components/Button'
+import { CarsData } from 'models/cars'
 import {
   Container,
   ContainerActions,
@@ -15,12 +15,12 @@ import {
   TextMenu,
   TextTitle,
 } from './style'
-import { Colors } from '../../styles/colors'
-import ModalDefault from '../../components/Modal'
+import { Colors } from 'styles/colors'
+import ModalDefault from 'components/Modal'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { Animated, TouchableWithoutFeedback } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { translate } from '../../services/i18n'
+import { translate } from 'services/i18n'
 
 interface CardProps {
   item: CarsData
