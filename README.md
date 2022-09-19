@@ -2,12 +2,6 @@
 <p align="center">Front-end of Les'Voitures application developed in React-Native with Typescript</p>
 <p>A cross-platform application to create, edit and delete user-created cars.</p>
 
-## 🚀 How to run the project
-
-This project is divided into Three parts:
-
-<b> Front-end Mobile </b>
-
 ### Prerequisites
 
 Before starting, you will need to have the following tools installed on your machine: • [Git](https://git-scm.com/downloads), • [Node.js LTS](https://nodejs.org/en/download/), • [Node.js LTS](https://nodejs.org/en/download/), • [Yarn](https://yarnpkg.com/getting-started/install).
