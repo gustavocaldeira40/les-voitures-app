@@ -79,4 +79,5 @@ export default {
   'Are you sure you want to delete this Vehicle?':
     'Voulez-vous vraiment supprimer ce véhicule ?',
   'Image for illustrative purposes only': 'Image à titre indicatif seulement',
+  'No Content': 'Pas de contenu',
 }

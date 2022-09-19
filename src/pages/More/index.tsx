@@ -51,7 +51,7 @@ const More: React.FC = () => {
 
   return (
     <Container>
-      <Header title="Mais" />
+      <Header title={translate('More')} />
       <TouchableItem
         activeOpacity={0.5}
         onPress={() =>

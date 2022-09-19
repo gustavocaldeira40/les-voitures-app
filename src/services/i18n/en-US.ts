@@ -80,4 +80,5 @@ export default {
     'Are you sure you want to delete this Vehicle?',
   'Image for illustrative purposes only':
     'Image for illustrative purposes only',
+  'No Content': 'No Content',
 }

@@ -51,6 +51,7 @@ export default {
   Close: 'Fechar',
   Cancel: 'Cancelar',
   Yes: 'Sim',
+  Price: 'Preço',
 
   // ListCars
   'List of': 'Lista de',
@@ -77,4 +78,5 @@ export default {
   'Are you sure you want to delete this Vehicle?':
     'Tem Certeza que deseja apagar esse Veículo ?',
   'Image for illustrative purposes only': 'Imagem meramente ilustrativa',
+  'No Content': 'Sem Conteúdo',
 }

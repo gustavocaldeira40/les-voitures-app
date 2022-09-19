@@ -1,5 +1,5 @@
 import React from 'react'
-import { CarsData } from '../../models/cars'
+import { translate } from '../../services/i18n'
 import { Container, ContainerTexts, TextDescription } from './style'
 
 interface ActionSeeMoreProps {
@@ -15,14 +15,14 @@ const ActionSeeMore: React.FC<ActionSeeMoreProps> = ({
     <Container style={{ elevation: 5 }}>
       <TextDescription>{title}</TextDescription>
       <ContainerTexts withMargin>
-        {title === 'Price' && (
+        {title === translate('Price') && (
           <TextDescription isCurrency isDescription>
             R${' '}
           </TextDescription>
         )}
 
         <TextDescription numberOfLines={1} isDescription>
-          {title === 'Price'
+          {title === translate('Price')
             ? String(description)?.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
             : description}
         </TextDescription>
